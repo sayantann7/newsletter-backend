@@ -160,6 +160,31 @@ if (process.env.NODE_ENV !== "production") {
         console.log(`Server is running on http://localhost:${PORT}`);
     });
 }
+// @ts-ignore
+app.post("/add-subscriber", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { email } = req.body;
+        if (!email) {
+            return res.status(400).send("Email is required");
+        }
+        // Check if the email already exists
+        const existingEmail = yield prisma.email.findUnique({
+            where: { email },
+        });
+        if (existingEmail) {
+            return res.status(400).send("Email already exists");
+        }
+        // Create a new subscriber
+        const newSubscriber = yield prisma.email.create({
+            data: { email },
+        });
+        res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
+    }
+    catch (error) {
+        console.error("Error adding subscriber:", error);
+        res.status(500).send("Error adding subscriber");
+    }
+}));
 const sendEmail = (subject, body, email) => __awaiter(void 0, void 0, void 0, function* () {
     const emailResponse = yield resend.emails.send({
         from: "Tensor Protocol <onboarding@tensorboy.com>",

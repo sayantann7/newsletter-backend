@@ -189,7 +189,7 @@ app.post("/add-subscriber", async (req, res) => {
         });
 
         if (existingEmail) {
-            return res.status(400).send("Email already exists");
+            return res.status(208).send("Email already exists");
         }
 
         // Create a new subscriber
