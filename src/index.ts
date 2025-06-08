@@ -35,7 +35,7 @@ const hashSalt = 10;
 // @ts-ignore
 app.post("/signup", async (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { username, email, password } = req.body;
         if (!username || !password) {
             return res.status(400).send("Username and password are required");
         }
@@ -53,6 +53,7 @@ app.post("/signup", async (req, res) => {
         const user = await prisma.admin.create({
             data: {
                 username,
+                email,
                 password: hashedPassword
             },
         });
@@ -186,7 +187,7 @@ app.post("/send-test-email", async (req, res) => {
             where: { id: userId as string },
         });
 
-        await sendEmail(subject, body, );
+        await sendEmail(subject, body, admin.email);
 
         res.status(200).send("Email sent successfully");
     } catch (error) {
