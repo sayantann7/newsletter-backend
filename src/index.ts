@@ -166,6 +166,35 @@ app.post("/send-email", async (req, res) => {
     }
 });
 
+// @ts-ignore
+app.post("/send-test-email", async (req, res) => {
+    try {
+        const { userId, subject, body } = req.body;
+        if (!userId || !subject || !body) {
+            return res.status(400).send("User ID, subject, and body are required");
+        }
+
+        const admin = await prisma.admin.findUnique({
+            where: { id: userId as string }
+        });
+        if (!admin) {
+            return res.status(404).send("Admin not found");
+        }
+
+        // Increment the email sent count
+        await prisma.admin.findFirst({
+            where: { id: userId as string },
+        });
+
+        await sendEmail(subject, body, );
+
+        res.status(200).send("Email sent successfully");
+    } catch (error) {
+        console.error("Error sending email:", error);
+        res.status(500).send("Error sending email");
+    }
+});
+
 // Modified server startup for Vercel compatibility
 if (process.env.NODE_ENV !== "production") {
     const PORT = process.env.PORT || 3000;
