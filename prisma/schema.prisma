@@ -25,6 +25,9 @@ model Admin {
 
 model Email {
   id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
   email     String   @unique
+  status    String   @default("active")
+  metadata  String?
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
