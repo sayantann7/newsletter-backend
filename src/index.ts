@@ -208,7 +208,7 @@ if (process.env.NODE_ENV !== "production") {
 // @ts-ignore
 app.post("/add-subscriber", async (req, res) => {
     try {
-        const { email, interests, currentPosition, currentCompany, currentLocation, interestedInJobs, skills, experienceYears, jobPreferences, phoneNumber } = req.body;
+        const { email, interests, currentPosition, currentCompany, currentLocation, interestedInJobs, skills, experienceYears, jobPreferences, phoneNumber, resumeLink } = req.body;
         if (!email) {
             return res.status(400).send("Email is required");
         }
@@ -234,7 +234,8 @@ app.post("/add-subscriber", async (req, res) => {
                     skills,
                     experienceYears,
                     jobPreferences,
-                    phoneNumber
+                    phoneNumber,
+                    resumeLink
                 },
             });
             res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
