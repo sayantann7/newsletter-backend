@@ -40,4 +40,5 @@ model Email {
   skills String?
   experienceYears Int?
   jobPreferences String?
+  phoneNumber String?
 }
