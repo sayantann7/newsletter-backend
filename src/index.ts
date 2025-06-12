@@ -219,10 +219,40 @@ app.post("/add-subscriber", async (req, res) => {
         });
 
         if (existingEmail) {
-            return res.status(208).send("Email already exists");
+            if (interestedInJobs == true) {
+                const newSubscriber = await prisma.email.update({
+                    where: { email: existingEmail.email },
+                    data: {
+                        interests,
+                        currentPosition,
+                        currentCompany,
+                        currentLocation,
+                        interestedInJobs,
+                        skills,
+                        experienceYears,
+                        jobPreferences,
+                        phoneNumber,
+                        resumeLink
+                    },
+                });
+                res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
+            } else {
+                const newSubscriber = await prisma.email.update({
+                    where: { email: existingEmail.email },
+                    data: {
+                        email,
+                        interests,
+                        currentPosition,
+                        currentCompany,
+                        currentLocation,
+                        interestedInJobs,
+                    },
+                });
+                res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
+            }
         }
 
-        if(interestedInJobs==true){
+        if (interestedInJobs == true) {
             const newSubscriber = await prisma.email.create({
                 data: {
                     email,
@@ -260,7 +290,7 @@ app.post("/add-subscriber", async (req, res) => {
 });
 
 
-const sendEmail = async (subject: string, content: string, email : string) => {
+const sendEmail = async (subject: string, content: string, email: string) => {
     const emailResponse = await resend.emails.send({
         from: "Tensor Protocol <onboarding@tensorboy.com>",
         to: email,
