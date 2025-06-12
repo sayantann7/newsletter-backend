@@ -208,7 +208,7 @@ if (process.env.NODE_ENV !== "production") {
 // @ts-ignore
 app.post("/add-subscriber", async (req, res) => {
     try {
-        const { email } = req.body;
+        const { email, interests, currentPosition, currentCompany, currentLocation, interestedInJobs, skills, experienceYears, jobPreferences } = req.body;
         if (!email) {
             return res.status(400).send("Email is required");
         }
@@ -222,12 +222,35 @@ app.post("/add-subscriber", async (req, res) => {
             return res.status(208).send("Email already exists");
         }
 
-        // Create a new subscriber
-        const newSubscriber = await prisma.email.create({
-            data: { email },
-        });
+        if(interestedInJobs==true){
+            const newSubscriber = await prisma.email.create({
+                data: {
+                    email,
+                    interests,
+                    currentPosition,
+                    currentCompany,
+                    currentLocation,
+                    interestedInJobs,
+                    skills,
+                    experienceYears,
+                    jobPreferences
+                },
+            });
+            res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
+        } else {
+            const newSubscriber = await prisma.email.create({
+                data: {
+                    email,
+                    interests,
+                    currentPosition,
+                    currentCompany,
+                    currentLocation,
+                    interestedInJobs,
+                },
+            });
+            res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
+        }
 
-        res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
     } catch (error) {
         console.error("Error adding subscriber:", error);
         res.status(500).send("Error adding subscriber");

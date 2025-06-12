@@ -31,4 +31,13 @@ model Email {
   metadata  String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
+  interests String[] @default([])
+  currentPosition String?
+  currentCompany String?
+  currentLocation String?
+  interestedInJobs Boolean @default(false)
+
+  skills String?
+  experienceYears Int?
+  jobPreferences String?
 }

@@ -39,7 +39,7 @@ const hashSalt = 10;
 // @ts-ignore
 app.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { username, password } = req.body;
+        const { username, email, password } = req.body;
         if (!username || !password) {
             return res.status(400).send("Username and password are required");
         }
@@ -53,6 +53,7 @@ app.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         const user = yield prisma.admin.create({
             data: {
                 username,
+                email,
                 password: hashedPassword
             },
         });
@@ -153,6 +154,31 @@ app.post("/send-email", (req, res) => __awaiter(void 0, void 0, void 0, function
         res.status(500).send("Error sending email");
     }
 }));
+// @ts-ignore
+app.post("/send-test-email", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { userId, subject, content } = req.body;
+        if (!userId || !subject || !content) {
+            return res.status(400).send("User ID, subject, and content are required");
+        }
+        const admin = yield prisma.admin.findUnique({
+            where: { id: userId }
+        });
+        if (!admin) {
+            return res.status(404).send("Admin not found");
+        }
+        // Increment the email sent count
+        yield prisma.admin.findFirst({
+            where: { id: userId },
+        });
+        yield sendEmail(subject, content, admin.email);
+        res.status(200).send("Email sent successfully");
+    }
+    catch (error) {
+        console.error("Error sending email:", error);
+        res.status(500).send("Error sending email");
+    }
+}));
 // Modified server startup for Vercel compatibility
 if (process.env.NODE_ENV !== "production") {
     const PORT = process.env.PORT || 3000;
@@ -163,7 +189,7 @@ if (process.env.NODE_ENV !== "production") {
 // @ts-ignore
 app.post("/add-subscriber", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { email } = req.body;
+        const { email, interests, currentPosition, currentCompany, currentLocation, interestedInJobs, skills, experienceYears, jobPreferences } = req.body;
         if (!email) {
             return res.status(400).send("Email is required");
         }
@@ -172,61 +198,49 @@ app.post("/add-subscriber", (req, res) => __awaiter(void 0, void 0, void 0, func
             where: { email },
         });
         if (existingEmail) {
-            return res.status(400).send("Email already exists");
+            return res.status(208).send("Email already exists");
         }
-        // Create a new subscriber
-        const newSubscriber = yield prisma.email.create({
-            data: { email },
-        });
-        res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
+        if (interestedInJobs == true) {
+            const newSubscriber = yield prisma.email.create({
+                data: {
+                    email,
+                    interests,
+                    currentPosition,
+                    currentCompany,
+                    currentLocation,
+                    interestedInJobs,
+                    skills,
+                    experienceYears,
+                    jobPreferences
+                },
+            });
+            res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
+        }
+        else {
+            const newSubscriber = yield prisma.email.create({
+                data: {
+                    email,
+                    interests,
+                    currentPosition,
+                    currentCompany,
+                    currentLocation,
+                    interestedInJobs,
+                },
+            });
+            res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
+        }
     }
     catch (error) {
         console.error("Error adding subscriber:", error);
         res.status(500).send("Error adding subscriber");
     }
 }));
-const sendEmail = (subject, body, email) => __awaiter(void 0, void 0, void 0, function* () {
+const sendEmail = (subject, content, email) => __awaiter(void 0, void 0, void 0, function* () {
     const emailResponse = yield resend.emails.send({
         from: "Tensor Protocol <onboarding@tensorboy.com>",
         to: email,
         subject: subject,
-        html: `
-                <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Terminal Protocol Welcome</title>
-            </head>
-            <body style="margin: 0; padding: 20px; font-family: 'Courier New', monospace; background-color: #ffffff; color: #b8460e; line-height: 1.6;">
-                <div style="max-width: 600px; margin: 0 auto; padding: 40px; background-color: #ffffff;">
-                    <div style="margin-bottom: 30px;">
-                        <div style="font-size: 72px; font-weight: 900; color: #b8460e; margin-bottom: 5px; letter-spacing: 2px;">T.P<span style="color: #b8460e;">*</span></div>
-                        <div style="font-size: 18px; font-weight: bold; color: #b8460e; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px;">TERMINAL | PROTOCOL</div>
-                    </div>
-                    
-                    <div style="height: 2px; background-color: #b8460e; margin: 30px 0;"></div>
-                    
-                    <div style="font-size: 16px; color: #b8460e; font-weight: bold; margin-bottom: 20px;">
-                        ${(body)}
-                    </div>
-                    
-                    <div style="margin-top: 40px; font-weight: bold; font-size: 16px; color: #b8460e;">
-                        — tensor boy
-                    </div>
-                    
-                    <div style="height: 2px; background-color: #b8460e; margin: 30px 0;"></div>
-                    
-                    <div style="margin-top: 50px; text-align: left;">
-                        <div style="font-size: 20px; font-weight: bold; color: #b8460e; line-height: 1.4;">
-                            Hack the system.<br>
-                            Or be hacked by it.
-                        </div>
-                    </div>
-                </div>
-            </body>
-            </html>
-            `,
+        html: content
     });
 });
 // Export the Express app for Vercel
