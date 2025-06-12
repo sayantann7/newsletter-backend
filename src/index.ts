@@ -208,9 +208,24 @@ if (process.env.NODE_ENV !== "production") {
 // @ts-ignore
 app.post("/add-subscriber", async (req, res) => {
     try {
-        const { email, interests, currentPosition, currentCompany, currentLocation, interestedInJobs, skills, experienceYears, jobPreferences, phoneNumber, resumeLink } = req.body;
+        const { email, interests, currentPosition, currentCompany, currentLocation, interestedInJobs, skills, experienceYears, jobPreferences, phoneNumber, resumeLink, fillLater } = req.body;
         if (!email) {
             return res.status(400).send("Email is required");
+        }
+
+        if (fillLater==true) {
+            const newSubscriber = await prisma.email.create({
+                data: {
+                    email,
+                    interests,
+                    currentPosition,
+                    currentCompany,
+                    currentLocation,
+                    interestedInJobs: false,
+                    fillLater
+                },
+            });
+            res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
         }
 
         // Check if the email already exists

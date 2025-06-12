@@ -36,6 +36,7 @@ model Email {
   currentCompany   String?
   currentLocation  String?
   interestedInJobs Boolean  @default(false)
+  fillLater        Boolean  @default(false)
 
   skills          String?
   experienceYears Int?
