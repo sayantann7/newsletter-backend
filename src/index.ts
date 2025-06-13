@@ -156,7 +156,10 @@ app.post("/send-email", async (req, res) => {
             return res.status(404).send("No subscribers found");
         }
 
+        console.log(`Sending email to ${emailList.length} subscribers`);
+
         emailList.forEach(async (subscriber) => {
+            console.log(`Sending email to: ${subscriber.email}`);
             await sendEmail(subject, body, subscriber.email);
         });
 
