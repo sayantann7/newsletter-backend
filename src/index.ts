@@ -132,6 +132,7 @@ app.post("/send-email", async (req, res) => {
     try {
         const { userId, subject, body } = req.body;
         if (!userId || !subject || !body) {
+            console.error("Missing required fields:", { userId, subject, body });
             return res.status(400).send("User ID, subject, and body are required");
         }
 
