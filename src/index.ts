@@ -315,6 +315,7 @@ const sendEmail = async (subject: string, content: string, email: string) => {
         subject: subject,
         html: content
     });
+    console.log(`Email sent to ${email}:`, emailResponse);
 };
 
 // Export the Express app for Vercel
