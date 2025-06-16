@@ -5,6 +5,12 @@ import cors from "cors";
 import { PrismaClient } from "../src/generated/prisma";
 import bcrpyt from "bcrypt";
 import { Resend } from "resend";
+import { uploadFile } from "./aws";
+import multer from "multer";
+import path from "path";
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
 declare global {
     // eslint-disable-next-line no-var
@@ -484,6 +490,33 @@ app.get("/get-contestant", async (req, res) => {
         console.error("Error fetching contestant:", error);
         res.status(500).json({ success: false, message: "Error fetching contestant" });
     }
+});
+
+
+
+// @ts-ignore
+app.post("/upload", upload.single("file"), async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: "No file uploaded." });
+    }
+
+    // Generate a safe S3 key (e.g. preserve original name or add timestamp)
+    const originalName = path.basename(req.file.originalname);
+    const timestamp = Date.now();
+    const s3Key = `${timestamp}-${originalName}`;
+
+    // 3. Call your uploadFile helper, passing the buffer directly
+    await uploadFile(s3Key, req.file.buffer);
+
+    return res.json({
+      message: "Upload successful!",
+      fileUrl: `https://tensorboy.s3.ap-south-1.amazonaws.com/${s3Key}`,
+    });
+  } catch (err) {
+    console.error("Upload error:", err);
+    return res.status(500).json({ error: "Upload failed." });
+  }
 });
 
 
