@@ -319,5 +319,175 @@ const sendEmail = async (subject: string, content: string, email: string) => {
     console.log(`Email sent to ${email}:`, emailResponse);
 };
 
+
+
+// @ts-ignore
+app.post("/check-subscriber", async (req, res) => {
+    try {
+        const { email } = req.body;
+        if (!email) {
+            return res.status(400).send("Email is required");
+        }
+
+        const subscriber = await prisma.email.findUnique({
+            where: { email },
+        });
+
+        if (subscriber) {
+            return res.status(200).json({ exists: true, subscriber });
+        } else {
+            return res.status(404).json({ exists: false });
+        }
+    } catch (error) {
+        console.error("Error checking subscriber:", error);
+        res.status(500).json({ error: true, message: "Error checking subscriber" });
+    }
+});
+
+// @ts-ignore
+app.post("/add-to-waitlist", async (req, res) => {
+    try {
+        const { email, ig_username, totalVotes, voteGiven } = req.body;
+        if (!email || !ig_username || totalVotes === undefined || voteGiven === undefined) {
+            return res.status(400).send("Email, Instagram username, total votes, and vote given are required");
+        }
+        const subscriber = await prisma.email.findUnique({
+            where: { email },
+        });
+        if (subscriber) {
+            const newWaitlistEntry = await prisma.waitlist.create({
+                data: {
+                    email,
+                    ig_username : ig_username || "",
+                    totalVotes : totalVotes || 1,
+                    voteGiven : voteGiven || 0,
+                }
+            });
+            res.status(201).json({ newWaitlistEntry, success : true });
+        } else {
+            return res.status(404).json({ success: false, message: "Subscriber not found in TP" });
+        }
+    } catch (error) {
+        console.error("Error adding to waitlist:", error);
+        res.status(500).json({ success: false, message: "Error adding to waitlist" });
+    }
+});
+
+
+// @ts-ignore
+app.get("/leaderboard", async (req, res) => {
+    try {
+        const waitlistEntries = await prisma.waitlist.findMany({
+            orderBy: {
+                totalVotes: 'desc',
+            },
+            take: 3,
+        });
+
+        if (waitlistEntries.length === 0) {
+            return res.status(404).json({ message: "No entries found in the waitlist" });
+        }
+
+        res.status(200).json(waitlistEntries);
+    } catch (error) {
+        console.error("Error fetching leaderboard:", error);
+        res.status(500).json({ error: true, message: "Error fetching leaderboard" });
+    }
+});
+
+// @ts-ignore
+app.post("/add-vote", async (req, res) => {
+    try {
+        const { email, contestant } = req.body;
+        if (!email) {
+            return res.status(400).send("Email is required");
+        }
+
+        const subscriber = await prisma.email.findUnique({
+            where: { email },
+        });
+
+        if (!subscriber) {
+            return res.status(404).json({ success: false, message: "Subscriber not found in TP" });
+        }
+
+        const contestantData = await prisma.waitlist.findUnique({
+            where: { email : contestant },
+        });
+
+        if (!contestantData) {
+            return res.status(404).json({ success: false, message: "Waitlist entry not found" });
+        }
+
+        const updatedContestant = await prisma.waitlist.update({
+            where: { email: contestant },
+            data: {
+                totalVotes: contestantData.totalVotes + 1,
+            },
+        });
+
+        const existingUser = await prisma.waitlist.findUnique({
+            where: { email: email },
+        });
+
+        if (!existingUser) {
+            const newWaitlistEntry = await prisma.waitlist.create({
+                data: {
+                    email: email,
+                    totalVotes: 1,
+                    voteGiven: 1,
+                },
+            });
+            return res.status(201).json({ success: true, newWaitlistEntry });
+        }
+
+        else {
+            if(existingUser.voteGiven >= 3){
+                return res.status(400).json({ success: false, message: "You have already used all your votes" });
+            }
+            const updatedUser = await prisma.waitlist.update({
+                where: { email: email },
+                data: {
+                    voteGiven: existingUser.voteGiven + 1,
+                },
+            });
+
+            return res.status(200).json({ success: true, updatedUser });
+        }
+
+    } catch (error) {
+        console.error("Error adding vote:", error);
+        res.status(500).json({ success: false, message: "Error adding vote" });
+    }
+});
+
+
+
+// @ts-ignore
+app.get("/get-contestant", async (req, res) => {
+    try {
+        const { email } = req.query;
+        if (!email) {
+            return res.status(400).send("Email is required");
+        }
+
+        const contestant = await prisma.waitlist.findUnique({
+            where: { email: email as string },
+        });
+
+        if (!contestant) {
+            return res.status(404).json({ success: false, message: "Contestant not found" });
+        }
+
+        res.status(200).json({ success: true, contestant });
+    } catch (error) {
+        console.error("Error fetching contestant:", error);
+        res.status(500).json({ success: false, message: "Error fetching contestant" });
+    }
+});
+
+
+
+
 // Export the Express app for Vercel
 export default app;

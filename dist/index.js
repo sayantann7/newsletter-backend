@@ -125,6 +125,7 @@ app.post("/send-email", (req, res) => __awaiter(void 0, void 0, void 0, function
     try {
         const { userId, subject, body } = req.body;
         if (!userId || !subject || !body) {
+            console.error("Missing required fields:", { userId, subject, body });
             return res.status(400).send("User ID, subject, and body are required");
         }
         const admin = yield prisma.admin.findUnique({
@@ -144,7 +145,9 @@ app.post("/send-email", (req, res) => __awaiter(void 0, void 0, void 0, function
         if (emailList.length === 0) {
             return res.status(404).send("No subscribers found");
         }
+        console.log(`Sending email to ${emailList.length} subscribers`);
         emailList.forEach((subscriber) => __awaiter(void 0, void 0, void 0, function* () {
+            console.log(`Sending email to: ${subscriber.email}`);
             yield sendEmail(subject, body, subscriber.email);
         }));
         res.status(200).send("Email sent successfully");
@@ -189,16 +192,61 @@ if (process.env.NODE_ENV !== "production") {
 // @ts-ignore
 app.post("/add-subscriber", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { email, interests, currentPosition, currentCompany, currentLocation, interestedInJobs, skills, experienceYears, jobPreferences } = req.body;
+        const { email, interests, currentPosition, currentCompany, currentLocation, interestedInJobs, skills, experienceYears, jobPreferences, phoneNumber, resumeLink, fillLater } = req.body;
         if (!email) {
             return res.status(400).send("Email is required");
+        }
+        if (fillLater == true) {
+            const newSubscriber = yield prisma.email.create({
+                data: {
+                    email,
+                    interests,
+                    currentPosition,
+                    currentCompany,
+                    currentLocation,
+                    interestedInJobs: false,
+                    fillLater
+                },
+            });
+            res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
         }
         // Check if the email already exists
         const existingEmail = yield prisma.email.findUnique({
             where: { email },
         });
         if (existingEmail) {
-            return res.status(208).send("Email already exists");
+            if (interestedInJobs == true) {
+                const newSubscriber = yield prisma.email.update({
+                    where: { email: existingEmail.email },
+                    data: {
+                        interests,
+                        currentPosition,
+                        currentCompany,
+                        currentLocation,
+                        interestedInJobs,
+                        skills,
+                        experienceYears,
+                        jobPreferences,
+                        phoneNumber,
+                        resumeLink
+                    },
+                });
+                res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
+            }
+            else {
+                const newSubscriber = yield prisma.email.update({
+                    where: { email: existingEmail.email },
+                    data: {
+                        email,
+                        interests,
+                        currentPosition,
+                        currentCompany,
+                        currentLocation,
+                        interestedInJobs,
+                    },
+                });
+                res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
+            }
         }
         if (interestedInJobs == true) {
             const newSubscriber = yield prisma.email.create({
@@ -211,7 +259,9 @@ app.post("/add-subscriber", (req, res) => __awaiter(void 0, void 0, void 0, func
                     interestedInJobs,
                     skills,
                     experienceYears,
-                    jobPreferences
+                    jobPreferences,
+                    phoneNumber,
+                    resumeLink
                 },
             });
             res.status(201).json({ id: newSubscriber.id, email: newSubscriber.email });
@@ -242,6 +292,78 @@ const sendEmail = (subject, content, email) => __awaiter(void 0, void 0, void 0,
         subject: subject,
         html: content
     });
+    console.log(`Email sent to ${email}:`, emailResponse);
 });
+// @ts-ignore
+app.post("/check-subscriber", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { email } = req.body;
+        if (!email) {
+            return res.status(400).send("Email is required");
+        }
+        const subscriber = yield prisma.email.findUnique({
+            where: { email },
+        });
+        if (subscriber) {
+            return res.status(200).json({ exists: true, subscriber });
+        }
+        else {
+            return res.status(404).json({ exists: false });
+        }
+    }
+    catch (error) {
+        console.error("Error checking subscriber:", error);
+        res.status(500).json({ error: true, message: "Error checking subscriber" });
+    }
+}));
+// @ts-ignore
+app.post("/add-to-waitlist", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { email, ig_username, totalVotes, voteGiven } = req.body;
+        if (!email || !ig_username || totalVotes === undefined || voteGiven === undefined) {
+            return res.status(400).send("Email, Instagram username, total votes, and vote given are required");
+        }
+        const subscriber = yield prisma.email.findUnique({
+            where: { email },
+        });
+        if (subscriber) {
+            const newWaitlistEntry = yield prisma.waitlist.create({
+                data: {
+                    email,
+                    ig_username: ig_username || "",
+                    totalVotes: totalVotes || 1,
+                    voteGiven: voteGiven || 0,
+                }
+            });
+            res.status(201).json({ newWaitlistEntry, success: true });
+        }
+        else {
+            return res.status(404).json({ success: false, message: "Subscriber not found in TP" });
+        }
+    }
+    catch (error) {
+        console.error("Error adding to waitlist:", error);
+        res.status(500).json({ success: false, message: "Error adding to waitlist" });
+    }
+}));
+// @ts-ignore
+app.get("/leaderboard", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const waitlistEntries = yield prisma.waitlist.findMany({
+            orderBy: {
+                totalVotes: 'desc',
+            },
+            take: 3,
+        });
+        if (waitlistEntries.length === 0) {
+            return res.status(404).json({ message: "No entries found in the waitlist" });
+        }
+        res.status(200).json(waitlistEntries);
+    }
+    catch (error) {
+        console.error("Error fetching leaderboard:", error);
+        res.status(500).json({ error: true, message: "Error fetching leaderboard" });
+    }
+}));
 // Export the Express app for Vercel
 exports.default = app;
