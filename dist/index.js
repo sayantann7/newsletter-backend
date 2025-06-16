@@ -365,5 +365,186 @@ app.get("/leaderboard", (req, res) => __awaiter(void 0, void 0, void 0, function
         res.status(500).json({ error: true, message: "Error fetching leaderboard" });
     }
 }));
+// @ts-ignore
+app.post("/add-vote", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { email, contestant } = req.body;
+        if (!email) {
+            return res.status(400).send("Email is required");
+        }
+        const subscriber = yield prisma.email.findUnique({
+            where: { email },
+        });
+        if (!subscriber) {
+            return res.status(404).json({ success: false, message: "Subscriber not found in TP" });
+        }
+        const contestantData = yield prisma.waitlist.findUnique({
+            where: { email: contestant },
+        });
+        if (!contestantData) {
+            return res.status(404).json({ success: false, message: "Waitlist entry not found" });
+        }
+        const updatedContestant = yield prisma.waitlist.update({
+            where: { email: contestant },
+            data: {
+                totalVotes: contestantData.totalVotes + 1,
+            },
+        });
+        const existingUser = yield prisma.waitlist.findUnique({
+            where: { email: email },
+        });
+        if (!existingUser) {
+            const newWaitlistEntry = yield prisma.waitlist.create({
+                data: {
+                    email: email,
+                    totalVotes: 1,
+                    voteGiven: 1,
+                },
+            });
+            return res.status(201).json({ success: true, newWaitlistEntry });
+        }
+        else {
+            if (existingUser.voteGiven >= 3) {
+                return res.status(400).json({ success: false, message: "You have already used all your votes" });
+            }
+            const updatedUser = yield prisma.waitlist.update({
+                where: { email: email },
+                data: {
+                    voteGiven: existingUser.voteGiven + 1,
+                },
+            });
+            return res.status(200).json({ success: true, updatedUser });
+        }
+    }
+    catch (error) {
+        console.error("Error adding vote:", error);
+        res.status(500).json({ success: false, message: "Error adding vote" });
+    }
+}));
+// @ts-ignore
+app.get("/get-contestant", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { email } = req.query;
+        if (!email) {
+            return res.status(400).send("Email is required");
+        }
+        const contestant = yield prisma.waitlist.findUnique({
+            where: { email: email },
+        });
+        if (!contestant) {
+            return res.status(404).json({ success: false, message: "Contestant not found" });
+        }
+        res.status(200).json({ success: true, contestant });
+    }
+    catch (error) {
+        console.error("Error fetching contestant:", error);
+        res.status(500).json({ success: false, message: "Error fetching contestant" });
+    }
+}));
+// @ts-ignore
+app.post("/add-wallpaper", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { imageUrl, author } = req.body;
+        if (!imageUrl || !author) {
+            return res.status(400).json({ error: "Image URL and author are required." });
+        }
+        const newWallpaper = yield prisma.wallpaper.create({
+            data: {
+                imageUrl,
+                author,
+            },
+        });
+        res.status(201).json({ success: true, wallpaper: newWallpaper });
+    }
+    catch (err) {
+        console.error("Upload error:", err);
+        return res.status(500).json({ success: false, error: "Upload failed." });
+    }
+}));
+// @ts-ignore
+app.get("/get-wallpapers", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const wallpapers = yield prisma.wallpaper.findMany({
+            orderBy: {
+                createdAt: 'desc',
+            },
+            select: {
+                id: true,
+                imageUrl: true,
+                author: true,
+            }
+        });
+        res.status(200).json({ success: true, wallpapers });
+    }
+    catch (err) {
+        console.error("Fetch error:", err);
+        return res.status(500).json({ success: false, error: "Failed to fetch wallpapers." });
+    }
+}));
+// @ts-ignore
+app.get("/get-wallpaper/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id } = req.params;
+        const wallpaper = yield prisma.wallpaper.findUnique({
+            where: { id },
+            select: {
+                id: true,
+                imageUrl: true,
+            }
+        });
+        if (!wallpaper) {
+            return res.status(404).json({ success: false, error: "Wallpaper not found." });
+        }
+        res.status(200).json({ success: true, wallpaper });
+    }
+    catch (err) {
+        console.error("Fetch error:", err);
+        return res.status(500).json({ success: false, error: "Failed to fetch wallpaper." });
+    }
+}));
+// @ts-ignore
+app.delete("/delete-wallpaper/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id } = req.params;
+        const wallpaper = yield prisma.wallpaper.findUnique({
+            where: { id },
+        });
+        if (!wallpaper) {
+            return res.status(404).json({ success: false, error: "Wallpaper not found." });
+        }
+        yield prisma.wallpaper.delete({
+            where: { id },
+        });
+        res.status(200).json({ success: true, message: "Wallpaper deleted successfully." });
+    }
+    catch (err) {
+        console.error("Delete error:", err);
+        return res.status(500).json({ success: false, error: "Failed to delete wallpaper." });
+    }
+}));
+// @ts-ignore
+app.post("/approve-wallpaper", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id } = req.body;
+        if (!id) {
+            return res.status(400).json({ error: "Wallpaper ID is required." });
+        }
+        const wallpaper = yield prisma.wallpaper.findUnique({
+            where: { id },
+        });
+        if (!wallpaper) {
+            return res.status(404).json({ success: false, error: "Wallpaper not found." });
+        }
+        yield prisma.wallpaper.update({
+            where: { id },
+            data: { isApproved: true },
+        });
+        res.status(200).json({ success: true, message: "Wallpaper approved successfully." });
+    }
+    catch (err) {
+        console.error("Approval error:", err);
+        return res.status(500).json({ success: false, error: "Failed to approve wallpaper." });
+    }
+}));
 // Export the Express app for Vercel
 exports.default = app;

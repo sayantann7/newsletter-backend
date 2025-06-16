@@ -5,12 +5,6 @@ import cors from "cors";
 import { PrismaClient } from "../src/generated/prisma";
 import bcrpyt from "bcrypt";
 import { Resend } from "resend";
-import { uploadFile } from "./aws";
-import multer from "multer";
-import path from "path";
-
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
 
 declare global {
     // eslint-disable-next-line no-var
@@ -495,28 +489,111 @@ app.get("/get-contestant", async (req, res) => {
 
 
 // @ts-ignore
-app.post("/upload", upload.single("file"), async (req, res) => {
+app.post("/add-wallpaper", async (req, res) => {
   try {
-    if (!req.file) {
-      return res.status(400).json({ error: "No file uploaded." });
+    const { imageUrl, author } = req.body;
+    if (!imageUrl || !author) {
+      return res.status(400).json({ error: "Image URL and author are required." });
     }
-
-    // Generate a safe S3 key (e.g. preserve original name or add timestamp)
-    const originalName = path.basename(req.file.originalname);
-    const timestamp = Date.now();
-    const s3Key = `${timestamp}-${originalName}`;
-
-    // 3. Call your uploadFile helper, passing the buffer directly
-    await uploadFile(s3Key, req.file.buffer);
-
-    return res.json({
-      message: "Upload successful!",
-      fileUrl: `https://tensorboy.s3.ap-south-1.amazonaws.com/${s3Key}`,
+    const newWallpaper = await prisma.wallpaper.create({
+      data: {
+        imageUrl,
+        author,
+      },
     });
+    res.status(201).json({ success: true, wallpaper: newWallpaper });
   } catch (err) {
     console.error("Upload error:", err);
-    return res.status(500).json({ error: "Upload failed." });
+    return res.status(500).json({ success: false ,error: "Upload failed." });
   }
+});
+
+
+// @ts-ignore
+app.get("/get-wallpapers", async (req, res) => {
+  try {
+    const wallpapers = await prisma.wallpaper.findMany({
+      orderBy: {
+        createdAt: 'desc',
+      },
+        select: {
+            id: true,
+            imageUrl: true,
+            author: true,
+        }
+    });
+    res.status(200).json({ success: true, wallpapers });
+  } catch (err) {
+    console.error("Fetch error:", err);
+    return res.status(500).json({ success: false, error: "Failed to fetch wallpapers." });
+  }
+});
+
+
+// @ts-ignore
+app.get("/get-wallpaper/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const wallpaper = await prisma.wallpaper.findUnique({
+            where: { id },
+            select: {
+                id: true,
+                imageUrl: true,
+            }
+        });
+        if (!wallpaper) {
+            return res.status(404).json({ success: false, error: "Wallpaper not found." });
+        }
+        res.status(200).json({ success: true, wallpaper });
+    } catch (err) {
+        console.error("Fetch error:", err);
+        return res.status(500).json({ success: false, error: "Failed to fetch wallpaper." });
+    }
+});
+
+// @ts-ignore
+app.delete("/delete-wallpaper/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const wallpaper = await prisma.wallpaper.findUnique({
+            where: { id },
+        });
+        if (!wallpaper) {
+            return res.status(404).json({ success: false, error: "Wallpaper not found." });
+        }
+        await prisma.wallpaper.delete({
+            where: { id },
+        });
+        res.status(200).json({ success: true, message: "Wallpaper deleted successfully." });
+    } catch (err) {
+        console.error("Delete error:", err);
+        return res.status(500).json({ success: false, error: "Failed to delete wallpaper." });
+    }
+});
+
+
+// @ts-ignore
+app.post("/approve-wallpaper", async (req, res) => {
+    try {
+        const { id } = req.body;
+        if (!id) {
+            return res.status(400).json({ error: "Wallpaper ID is required." });
+        }
+        const wallpaper = await prisma.wallpaper.findUnique({
+            where: { id },
+        });
+        if (!wallpaper) {
+            return res.status(404).json({ success: false, error: "Wallpaper not found." });
+        }
+        await prisma.wallpaper.update({
+            where: { id },
+            data: { isApproved: true },
+        });
+        res.status(200).json({ success: true, message: "Wallpaper approved successfully." });
+    } catch (err) {
+        console.error("Approval error:", err);
+        return res.status(500).json({ success: false, error: "Failed to approve wallpaper." });
+    }
 });
 
 
