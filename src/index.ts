@@ -542,6 +542,7 @@ app.get("/get-wallpapers", async (req, res) => {
             id: true,
             imageUrl: true,
             author: true,
+            isApproved: true,
         }
     });
     res.status(200).json({ success: true, wallpapers });
@@ -599,23 +600,28 @@ app.post("/approve-wallpaper", async (req, res) => {
     try {
         const { id } = req.body;
         if (!id) {
-            return res.status(400).json({ error: "Wallpaper id is required." });
+            return res.status(400).json({ error: "Wallpaper ID is required." });
         }
+        
         const wallpaper = await prisma.wallpaper.findUnique({
             where: { id },
         });
+        
         if (!wallpaper) {
             return res.status(404).json({ success: false, error: "Wallpaper not found." });
         }
+        
         await prisma.wallpaper.update({
             where: { id },
             data: { isApproved: true },
         });
+        
         res.status(200).json({ success: true, message: "Wallpaper approved successfully." });
     } catch (err) {
         console.error("Approval error:", err);
         return res.status(500).json({ success: false, error: "Failed to approve wallpaper." });
     }
+});
 });
 
 
