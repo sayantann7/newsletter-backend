@@ -597,12 +597,12 @@ app.delete("/delete-wallpaper/:id", async (req, res) => {
 // @ts-ignore
 app.post("/approve-wallpaper", async (req, res) => {
     try {
-        const { imageUrl } = req.body;
+        const { id } = req.body;
         if (!id) {
-            return res.status(400).json({ error: "Wallpaper imageUrl is required." });
+            return res.status(400).json({ error: "Wallpaper id is required." });
         }
         const wallpaper = await prisma.wallpaper.findUnique({
-            where: { imageUrl },
+            where: { id },
         });
         if (!wallpaper) {
             return res.status(404).json({ success: false, error: "Wallpaper not found." });
