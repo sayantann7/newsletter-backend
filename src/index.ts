@@ -508,6 +508,28 @@ app.post("/add-wallpaper", async (req, res) => {
   }
 });
 
+// @ts-ignore
+app.get("/approved-wallpapers", async (req, res) => {
+  try {
+    const wallpapers = await prisma.wallpaper.findMany({
+      where: {
+        isApproved: true,
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+      select: {
+        id: true,
+        imageUrl: true,
+      }
+    });
+    res.status(200).json({ success: true, wallpapers });
+    } catch (err) {
+    console.error("Fetch error:", err);
+    return res.status(500).json({ success: false, error: "Failed to fetch wallpapers." });
+    }
+});
+
 
 // @ts-ignore
 app.get("/get-wallpapers", async (req, res) => {
