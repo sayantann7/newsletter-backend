@@ -49,6 +49,7 @@ model Waitlist {
   id          String   @id @default(cuid())
   email       String   @unique
   ig_username String?
+  name        String
   totalVotes  Int      @default(0)
   voteGiven   Int      @default(0)
   createdAt   DateTime @default(now())

@@ -347,7 +347,7 @@ app.post("/check-subscriber", async (req, res) => {
 // @ts-ignore
 app.post("/add-to-waitlist", async (req, res) => {
     try {
-        const { email, ig_username, totalVotes, voteGiven } = req.body;
+        const { email, ig_username, totalVotes, voteGiven, name } = req.body;
         if (!email || !ig_username || totalVotes === undefined || voteGiven === undefined) {
             return res.status(400).send("Email, Instagram username, total votes, and vote given are required");
         }
@@ -361,6 +361,7 @@ app.post("/add-to-waitlist", async (req, res) => {
                     ig_username : ig_username || "",
                     totalVotes : totalVotes || 1,
                     voteGiven : voteGiven || 0,
+                    name : name || "",
                 }
             });
             res.status(201).json({ newWaitlistEntry, success : true });
@@ -436,6 +437,7 @@ app.post("/add-vote", async (req, res) => {
                     email: email,
                     totalVotes: 1,
                     voteGiven: 1,
+                    name : ""
                 },
             });
             return res.status(201).json({ success: true, newWaitlistEntry });
@@ -621,7 +623,6 @@ app.post("/approve-wallpaper", async (req, res) => {
         console.error("Approval error:", err);
         return res.status(500).json({ success: false, error: "Failed to approve wallpaper." });
     }
-});
 });
 
 
