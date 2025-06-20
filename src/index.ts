@@ -348,8 +348,8 @@ app.post("/check-subscriber", async (req, res) => {
 app.post("/add-to-waitlist", async (req, res) => {
     try {
         const { email, ig_username, totalVotes, voteGiven, name } = req.body;
-        if (!email || !ig_username || totalVotes === undefined || voteGiven === undefined) {
-            return res.status(400).send("Email, Instagram username, total votes, and vote given are required");
+        if (!email) {
+            return res.status(400).send("Email is required");
         }
         const subscriber = await prisma.email.findUnique({
             where: { email },
