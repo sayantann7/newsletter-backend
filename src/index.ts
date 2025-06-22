@@ -382,7 +382,14 @@ app.get("/leaderboard", async (req, res) => {
             orderBy: {
                 totalVotes: 'desc',
             },
-            take: 3,
+            select: {
+                id: true,
+                email: true,
+                ig_username: true,
+                totalVotes: true,
+                voteGiven: true,
+                name: true,
+            }
         });
 
         if (waitlistEntries.length === 0) {
