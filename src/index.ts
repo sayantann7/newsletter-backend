@@ -468,13 +468,21 @@ app.post("/add-vote", async (req, res) => {
 // @ts-ignore
 app.get("/get-contestant", async (req, res) => {
     try {
-        const { email } = req.query;
-        if (!email) {
-            return res.status(400).send("Email is required");
+        const { id } = req.query;
+        if (!id) {
+            return res.status(400).send("ID is required");
         }
 
         const contestant = await prisma.waitlist.findUnique({
-            where: { email: email as string },
+            where: { id: id as string },
+            select: {
+                id: true,
+                email: true,
+                ig_username: true,
+                totalVotes: true,
+                voteGiven: true,
+                name: true,
+            }
         });
 
         if (!contestant) {
