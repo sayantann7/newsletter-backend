@@ -400,8 +400,8 @@ app.get("/leaderboard", async (req, res) => {
 app.post("/add-vote", async (req, res) => {
     try {
         const { email, contestant } = req.body;
-        if (!email) {
-            return res.status(400).send("Email is required");
+        if (!email || !contestant) {
+            return res.status(400).send("Email and contestant are required");
         }
 
         const subscriber = await prisma.email.findUnique({
