@@ -420,7 +420,7 @@ app.post("/add-vote", async (req, res) => {
         }
 
         const contestantData = await prisma.waitlist.findUnique({
-            where: { email : contestant },
+            where: { id : contestant },
         });
 
         if (!contestantData) {
@@ -428,7 +428,7 @@ app.post("/add-vote", async (req, res) => {
         }
 
         const updatedContestant = await prisma.waitlist.update({
-            where: { email: contestant },
+            where: { id: contestant },
             data: {
                 totalVotes: contestantData.totalVotes + 1,
             },
