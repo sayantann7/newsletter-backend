@@ -19,6 +19,7 @@ const cors_1 = __importDefault(require("cors"));
 const prisma_1 = require("../src/generated/prisma");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const resend_1 = require("resend");
+const zeptomail_1 = require("zeptomail");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
@@ -319,9 +320,9 @@ app.post("/check-subscriber", (req, res) => __awaiter(void 0, void 0, void 0, fu
 // @ts-ignore
 app.post("/add-to-waitlist", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { email, ig_username, totalVotes, voteGiven } = req.body;
-        if (!email || !ig_username || totalVotes === undefined || voteGiven === undefined) {
-            return res.status(400).send("Email, Instagram username, total votes, and vote given are required");
+        const { email, ig_username, totalVotes, voteGiven, name } = req.body;
+        if (!email) {
+            return res.status(400).send("Email is required");
         }
         const subscriber = yield prisma.email.findUnique({
             where: { email },
@@ -333,6 +334,7 @@ app.post("/add-to-waitlist", (req, res) => __awaiter(void 0, void 0, void 0, fun
                     ig_username: ig_username || "",
                     totalVotes: totalVotes || 1,
                     voteGiven: voteGiven || 0,
+                    name: name || "",
                 }
             });
             res.status(201).json({ newWaitlistEntry, success: true });
@@ -353,7 +355,14 @@ app.get("/leaderboard", (req, res) => __awaiter(void 0, void 0, void 0, function
             orderBy: {
                 totalVotes: 'desc',
             },
-            take: 3,
+            select: {
+                id: true,
+                email: true,
+                ig_username: true,
+                totalVotes: true,
+                voteGiven: true,
+                name: true,
+            }
         });
         if (waitlistEntries.length === 0) {
             return res.status(404).json({ message: "No entries found in the waitlist" });
@@ -369,8 +378,8 @@ app.get("/leaderboard", (req, res) => __awaiter(void 0, void 0, void 0, function
 app.post("/add-vote", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { email, contestant } = req.body;
-        if (!email) {
-            return res.status(400).send("Email is required");
+        if (!email || !contestant) {
+            return res.status(400).send("Email and contestant are required");
         }
         const subscriber = yield prisma.email.findUnique({
             where: { email },
@@ -379,13 +388,13 @@ app.post("/add-vote", (req, res) => __awaiter(void 0, void 0, void 0, function* 
             return res.status(404).json({ success: false, message: "Subscriber not found in TP" });
         }
         const contestantData = yield prisma.waitlist.findUnique({
-            where: { email: contestant },
+            where: { id: contestant },
         });
         if (!contestantData) {
             return res.status(404).json({ success: false, message: "Waitlist entry not found" });
         }
         const updatedContestant = yield prisma.waitlist.update({
-            where: { email: contestant },
+            where: { id: contestant },
             data: {
                 totalVotes: contestantData.totalVotes + 1,
             },
@@ -399,6 +408,7 @@ app.post("/add-vote", (req, res) => __awaiter(void 0, void 0, void 0, function* 
                     email: email,
                     totalVotes: 1,
                     voteGiven: 1,
+                    name: ""
                 },
             });
             return res.status(201).json({ success: true, newWaitlistEntry });
@@ -424,12 +434,20 @@ app.post("/add-vote", (req, res) => __awaiter(void 0, void 0, void 0, function* 
 // @ts-ignore
 app.get("/get-contestant", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { email } = req.query;
-        if (!email) {
-            return res.status(400).send("Email is required");
+        const { id } = req.query;
+        if (!id) {
+            return res.status(400).send("ID is required");
         }
         const contestant = yield prisma.waitlist.findUnique({
-            where: { email: email },
+            where: { id: id },
+            select: {
+                id: true,
+                email: true,
+                ig_username: true,
+                totalVotes: true,
+                voteGiven: true,
+                name: true,
+            }
         });
         if (!contestant) {
             return res.status(404).json({ success: false, message: "Contestant not found" });
@@ -462,6 +480,28 @@ app.post("/add-wallpaper", (req, res) => __awaiter(void 0, void 0, void 0, funct
     }
 }));
 // @ts-ignore
+app.get("/approved-wallpapers", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const wallpapers = yield prisma.wallpaper.findMany({
+            where: {
+                isApproved: true,
+            },
+            orderBy: {
+                createdAt: 'desc',
+            },
+            select: {
+                id: true,
+                imageUrl: true,
+            }
+        });
+        res.status(200).json({ success: true, wallpapers });
+    }
+    catch (err) {
+        console.error("Fetch error:", err);
+        return res.status(500).json({ success: false, error: "Failed to fetch wallpapers." });
+    }
+}));
+// @ts-ignore
 app.get("/get-wallpapers", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const wallpapers = yield prisma.wallpaper.findMany({
@@ -472,6 +512,7 @@ app.get("/get-wallpapers", (req, res) => __awaiter(void 0, void 0, void 0, funct
                 id: true,
                 imageUrl: true,
                 author: true,
+                isApproved: true,
             }
         });
         res.status(200).json({ success: true, wallpapers });
@@ -544,6 +585,139 @@ app.post("/approve-wallpaper", (req, res) => __awaiter(void 0, void 0, void 0, f
     catch (err) {
         console.error("Approval error:", err);
         return res.status(500).json({ success: false, error: "Failed to approve wallpaper." });
+    }
+}));
+// ZeptoMail configuration
+const ZM_API_URL = "https://api.zeptomail.in/";
+const ZM_TOKEN = "Zoho-enczapikey PHtE6r0EQu7vimMs+hUD5fCwQs/1Mo59qeMzJVZDso5GWadRFk0E/YstkWSwrxd7AflBHPWYwYxpsrKZt7+EJ2zkPWhFX2qyqK3sx/VYSPOZsbq6x00asV4ZcE3bUoHsd9Vo0iXXv9jfNA==";
+const FROM = {
+    address: "onboarding@tensorboy.com",
+    name: "Tensorboy"
+};
+const SUBJECT = "Welcome to Tensor Protocol! 🚀";
+const HTML_BODY = `<div class="variant">
+    <div class="email-container">
+        <div style="background: #000; color: #b8460e; padding: 25px; font-family: monospace;">
+            <div style="font-size: 14px; margin-bottom: 15px; opacity: 0.7;">
+                tensorboy@newsletter ~ %
+            </div>
+            <h1 style="margin: 0; font-size: 28px; font-weight: normal;">tensor-protocol --init</h1>
+        </div>
+
+        <div style="padding: 30px; background: white;">
+
+            <!-- Intro/content block -->
+            <div style="font-family: monospace; font-size: 14px; color: #b8460e; margin-bottom: 20px;">
+                > Loading neural networks... ████████████ 100%
+            </div>
+
+            <h2 style="color: #333; font-weight: 300; font-size: 26px; margin: 0 0 25px 0; font-family: monospace;">System Initialized</h2>
+
+            <p style="font-size: 18px; line-height: 1.8; margin: 0 0 25px 0; color: #000; font-family: monospace;">
+                Hello Maalik,<br><br>
+                Welcome to what's basically my love letter to the AI community – <strong style="color: #b8460e; font-family: monospace;">Tensor Protocol</strong>! This is where I spill all the tea ☕ on AI breakthroughs, share those golden hackathon secrets we all wish we knew earlier, and basically become your bandi for landing those dream internships.<br><br>
+                Oh, and expect some serious sarcasm because, let's face it, we're all lonely and a little dead inside, doom scrolling for a gf/bf.<br><br>
+                Real talk: why did this take <strong>FOREVER</strong> to launch?<br><br>
+                Look, I'm gonna be brutally honest here. I had these massive plans, right? But then life happened. I got completely absorbed in this content that was acting like a rebellious teenager, and... okay fine, I was also scared to hit that publish button 😬<br><br>
+                But you know what? Sometimes the best things come from those messy, imperfect moments. We're all just figuring it out as we go!<br><br>
+                I'm <strong>BACK</strong> and ready to change the game! 🎯
+            </p>
+
+            <!-- Features list -->
+            <div style="margin: 30px 0;">
+                <h3 style="color: #333; font-size: 22px; font-weight: 400; margin: 0 0 20px 0; font-family: monospace;">Your new weekly dose of awesome includes:</h3>
+
+                <div style="font-family: monospace; font-size: 18px; line-height: 2;">
+                    <div style="margin-bottom: 12px; color:#000;">
+                        •  <strong style="color: #b8460e;">AI Deep Dives:</strong> Real explanations that won't make your brain hurt + those secret sauce tips that actually boost performance 🧠⚡
+                    </div>
+                    <div style="margin-bottom: 12px; color:#000;">
+                        •  <strong style="color: #b8460e;">Hackathon Reality Check:</strong> The events worth your sleep deprivation + honest winner breakdowns & pitch strategies that work
+                    </div>
+                    <div style="margin-bottom: 12px; color:#000;">
+                        •  <strong style="color: #b8460e;">Internship Gold Mine:</strong> Those opportunities everyone's fighting for + the application secrets they don't teach in school
+                    </div>
+                    <div style="margin-bottom: 12px; color:#000;">
+                        •  <strong style="color: #b8460e;">Developer Toolkit:</strong> Code snippets that'll save your life, hidden gems, and those "why didn't I know this sooner" resources
+                    </div>
+                    <div style="margin-bottom: 12px; color:#000;">
+                        •  <strong style="color: #b8460e;">Community Love:</strong> Celebrating YOUR incredible projects because this journey is so much better together 🤝
+                    </div>
+                </div>
+            </div>
+
+
+
+<div style="margin-top: 15px;">
+                <h1 style="color: #000; padding: 25px; padding-left:0px; font-family: monospace; font-size: 20px;">- tensorboy</h1>
+            </div>
+
+
+            <!-- Social links footer -->
+            <div style="margin-top: 30px; font-family: monospace; font-size: 14px; color: #666;">
+                Connect with us:
+                <a href="https://www.linkedin.com/company/plutolabs-stealth/" style="color: #b8460e; text-decoration: none; margin: 0 8px;">LinkedIn</a>|
+                <a href="mailto:manav@tensorboy.com" style="color: #b8460e; text-decoration: none; margin: 0 8px;">Email</a>|
+                <a href="https://instagram.com/tensor._.boy" style="color: #b8460e; text-decoration: none; margin: 0 8px;">Instagram</a>
+            </div>
+        </div>
+    </div>
+</div>
+`;
+const zeptoClient = new zeptomail_1.SendMailClient({
+    url: ZM_API_URL,
+    token: ZM_TOKEN,
+});
+// @ts-ignore
+app.post("/send-welcome-email", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { email } = req.body;
+        if (!email) {
+            return res.status(400).json({ success: false, message: "Email is required" });
+        }
+        // Check if subscriber exists in the database
+        // const subscriber = await prisma.email.findUnique({
+        //     where: { email },
+        // });
+        // if (!subscriber) {
+        //     return res.status(404).json({ success: false, message: "Subscriber not found in TP" });
+        // }
+        yield zeptoClient.sendMail({
+            from: FROM,
+            to: [{ email_address: { address: email, name: "" } }],
+            subject: SUBJECT,
+            htmlbody: HTML_BODY,
+        });
+        console.log(`✅ Welcome email sent to ${email}`);
+        res.status(200).json({ success: true, message: "Welcome email sent successfully" });
+    }
+    catch (error) {
+        console.error("Error sending welcome email:", error);
+        res.status(500).json({ success: false, message: "Error sending welcome email" });
+    }
+}));
+// @ts-ignore
+app.post("/send-zepto-email", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { email, name, subject, htmlBody } = req.body;
+        if (!email || !subject || !htmlBody) {
+            return res.status(400).json({
+                success: false,
+                message: "Email, subject, and htmlBody are required"
+            });
+        }
+        yield zeptoClient.sendMail({
+            from: FROM,
+            to: [{ email_address: { address: email, name: name || "" } }],
+            subject: subject,
+            htmlbody: htmlBody,
+        });
+        console.log(`✅ Email sent to ${email}`);
+        res.status(200).json({ success: true, message: "Email sent successfully" });
+    }
+    catch (error) {
+        console.error("Error sending email via ZeptoMail:", error);
+        res.status(500).json({ success: false, message: "Error sending email" });
     }
 }));
 // Export the Express app for Vercel
