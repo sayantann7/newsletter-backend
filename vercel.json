@@ -9,7 +9,10 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/index.ts"
+      "dest": "src/index.ts",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; connect-src 'self' https://api.tensorboy.com;"
+      }
     }
   ]
 }
