@@ -16,6 +16,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; connect-src 'self' https://api.tensorboy.com;"
+  );
+  next();
+});
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Updated Prisma client instantiation for serverless environment
