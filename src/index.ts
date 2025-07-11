@@ -734,9 +734,23 @@ const zeptoClient = new SendMailClient({
   token: ZM_TOKEN,
 });
 
+app.options("/send-welcome-email", (req, res) => {
+  // Set CORS headers
+  res.header("Access-Control-Allow-Origin", "*"); // Or specify allowed origins
+  res.header("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Max-Age", "86400"); // 24 hours
+  res.status(204).end();
+});
+
 // @ts-ignore
 app.post("/send-welcome-email", async (req, res) => {
     try {
+        // Set CORS headers for the response
+        res.header("Access-Control-Allow-Origin", "*"); // Or specify allowed origins
+        res.header("Access-Control-Allow-Methods", "POST");
+        res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        
         const { email } = req.body;
         
         if (!email) {
