@@ -737,6 +737,8 @@ const test_body_html = `
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <style type="text/css">
+            /* Improve text scaling consistency */
+            body, table, td { -webkit-text-size-adjust: 100%; }
             /* Mobile tweaks */
             @media only screen and (max-width: 600px) {
                 .wr { padding: 12px !important; }
@@ -750,6 +752,18 @@ const test_body_html = `
                 .txt { font-size: 15px !important; line-height: 1.7 !important; }
                 a { word-break: break-word !important; }
                 ul { padding-left: 18px !important; }
+                td, p, li { word-break: break-word !important; }
+            }
+            /* Extra-small phones refinements */
+            @media only screen and (max-width: 480px) {
+                .pad-lg { padding: 22px 18px 18px 18px !important; }
+                .pad-sec { padding: 14px 18px 10px 18px !important; }
+                .pad-card { padding: 18px 18px 12px 18px !important; }
+                .h1 { font-size: 23px !important; }
+                .h2 { font-size: 19px !important; }
+                .h3 { font-size: 16px !important; }
+                .txt, .txt li { font-size: 15px !important; line-height: 1.55 !important; }
+                table.ct { box-shadow: none !important; }
             }
             /* Slightly wider body on desktops to use space */
             @media only screen and (min-width: 1024px) {
