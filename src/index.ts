@@ -730,89 +730,530 @@ const HTML_BODY = `<div class="variant">
 `;
 
 const test_body_html = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Newsletter</title>
-</head>
-<body style="font-family: Arial, sans-serif; background-color:#ffffff; margin:0; padding:0;">
-  <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#f7fafc">
-    <tr>
-      <td align="center">
-        <table width="600" cellspacing="0" cellpadding="20" border="0" bgcolor="#ffffff" style="border:1px solid #000;">
-          <tr>
-            <td>
-              <h2>Hackathons</h2>
-              <p><a href="https://reskilll.com/hack/hereindia"><strong>HERE India Hackathon: Women in Tech</strong></a></p>
-              <p><a href="https://vision.hack2skill.com/event/genaiexchangehackathon?utm_source=hack2skill&utm_medium=homepage">Gen AI Exchange Hackathon</a></p>
-              <p><a href="https://revenuecat-shipaton-2025.devpost.com/register"><strong>RevenueCat Shipaton 2025</strong></a></p>
-              <p><a href="https://hackvortex-codestorm-5.devpost.com/register?flow%5Bdata%5D%5Bchallenge_id%5D=22991&flow%5Bname%5D=register_for_challenge"><strong>HackVortex Codestorm 5</strong></a></p>
-              <p><a href="https://hackodisha-4.devfolio.co/overview"><strong>HackOdisha 5.0</strong></a></p>
-              <h3>Space Apps Challenge Noida</h3>
-              <p><strong>Date:</strong> September 7, 2025<br>
-                 <strong>Theme:</strong> Space technology, NASA-themed problems<br>
-                 <strong>Eligibility:</strong> Open<br>
-                 <strong>Website:</strong> <a href="https://thenewviews.com/upcoming-hackathons-in-india/">Event details</a>
-              </p>
-              <h3>India Open Hackathon</h3>
-              <p><strong>Dates:</strong> September 18–26, 2025<br>
-                 <strong>Theme:</strong> Hybrid innovation (NVIDIA/OpenACC partnership)<br>
-                 <strong>Deadline:</strong> Apply by August 19, 2025<br>
-                 <strong>Eligibility:</strong> Open to all<br>
-                 <strong>Website:</strong> <a href="https://thenewviews.com/upcoming-hackathons-in-india/">Details</a>
-              </p>
+<div id=":v1" class="a3s aiL msg-4901284468925022273" role="region" aria-label="Message body">
+    <div style="display:none;max-height:0;overflow:hidden">Your daily roundup of Hackathons, Internships, AI Tools, and Tech News.</div>
 
-              <h2>Internships</h2>
-              <p><a href="https://job-boards.greenhouse.io/enterpret/jobs/6691182003?gh_src=p9f0iznr3us"><strong>Enterpret Software Engineer Intern</strong></a></p>
-              <p><a href="https://browserstack.wd3.myworkdayjobs.com/en-US/External/job/Mumbai---Work-From-Office/Software-Development-Engineer---Backend--2025-passout-_JR102583-1/apply/applyManually"><strong>BrowserStack Software Development Engineer – Backend (2025)</strong></a></p>
-              <p><a href="https://jobs.standardchartered.com/job/Chennai-Development-Engineer/828282702/"><strong>Standard Chartered Development Engineer</strong></a></p>
-              <p><a href="https://jobs.birlasoft.com/job/Hyderabad-Application-Developer-INDI/43125844/"><strong>Birlasoft Application Developer</strong></a></p>
-              <p><a href="https://www.rubrik.com/company/careers/departments/job.7208329?gh_jid=7208329&gh_src=2e352a8a1us"><strong>Rubrik Software Engineer – Winter Intern</strong></a></p>
 
-              <h2>AI Tool - Wrap</h2>
-              <p>LINK - <a href="https://www.warp.dev/pricing?utm_source=youtube&utm_medium=influencer&utm_campaign=coding-agent&utm_content=tensorboy&coupon=TENSOR&type=dollar&plan=pro&amount=1&fbclid=PAVERDUAMfjRVleHRuA2FlbQIxMAABp6_HE4ZReBlFYFz8yxTeCY2SItgUGJRc92PzKJjrjYcL8LC_jz-prFYZUJr5_aem_Zm5w7VrYdRbzq2I2hvIfyw">Warp Pro Discount</a></p>
-              <p>How you can use - <a href="https://www.instagram.com/reel/DNOE2JcytsQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Instagram Reel</a></p>
 
-              <h2>News</h2>
-              <p><strong>1. Meta updates chatbot rules to avoid inappropriate topics with teen users</strong><br>
-              <a href="https://techcrunch.com/2025/08/29/meta-updates-chatbot-rules-to-avoid-inappropriate-topics-with-teen-users/">Read on TechCrunch</a></p>
+    <div lang="und" marginheight="0" marginwidth="0" style="font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;width:100%;padding:0;Margin:0;background-color:#ffffff">
+        <div style="display:none;max-height:0;overflow:hidden">Your daily roundup of Hackathons, Internships, AI Tools, and Tech News.</div>
+        <div style="display:none;font-size:0px;line-height:0px;max-height:0px;max-width:0px;opacity:0;overflow:hidden">{{PreviewText}}&nbsp;</div>
+        <table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;background-repeat:repeat;background-position:center top;height:100%;background-color:#f7fafc" width="100%">
+            <tbody>
+                <tr>
+                    <td class="m_-4901284468925022273es-m-margin" style="padding:0;Margin:0" valign="top">
+                        <table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content" role="none" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%">
+                            <tbody>
+                                <tr>
+                                    <td align="center" style="padding:0;Margin:0">
+                                        <table align="center" bgcolor="#00000000" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content-body" role="none" style="border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="left" style="padding:0;Margin:0">
+                                                        <table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="center" style="padding:0;Margin:0;width:600px" valign="top">
+                                                                        <table cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;border-spacing:0px;border-radius:5px" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="right" class="m_-4901284468925022273es-m-txt-c m_-4901284468925022273es-infoblock" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px;line-height:15.6px;font-size:13px;color:#d3e5f6">
+                                                                                        
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-header" role="none" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
+                            <tbody>
+                                <tr>
+                                    <td align="center" style="padding:0;Margin:0">
+                                        <table align="center" bgcolor="#00000000" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-header-body" role="none" style="border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="left" bgcolor="#2D59F5" style="padding:0;Margin:0;background-color:#2d59f5">
+                                                        <table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="center" style="padding:0;Margin:0;width:600px" valign="top">
+                                                                        <table cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="left" style="padding:15px;Margin:0;font-size:0px"><img alt="alpha_signal_image_1" src="https://ci3.googleusercontent.com/meips/ADKq_NbCqvtNFGxXjwT7H3n1n1z1Qar5ZCsBdyx2ScYkrmL8WQH33SNzfMMTg9Ro7LemkwvqcWcFwxrQ1DdWCV71Crj5eaf_jCTp7DpmIgMQbzv_Ww_Y1Jrt4_GYHhx5RjyXt6vVM_2lt3417jOCGgEb3RkRAK5_oEOOK0srO4u4e8T6DDLBiMKvdieKYjXrNRXfwaX9HYScECh5oivZ6tuX_fdbUwmyinkojDsyY8R3RX4WL64A5qulkazvdcU=s0-d-e1-ft#https://content.app-us1.com/cdn-cgi/image/width=650,dpr=2,fit=scale-down,format=auto,UNUSED_error=redirect/QMZOW/2024/10/25/5bcd33d4-f684-42c1-a3fa-f5a0d75a8274.png" style="display:block;border:0;outline:none;text-decoration:none" width="30" class="CToWUd" data-bit="iit"></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="padding:0;Margin:0"></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td align="left" style="padding:15px;Margin:0">
+                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:27px;color:#ffffff;font-size:18px"><b>Hey there!</b></p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:15px;padding-right:15px">
+                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">Welcome to your daily source for the latest opportunities and news in the tech world. We bring you top hackathons, internships, tools, and news so you’re always up to date.</p>
+                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px"><br></p>
+                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">Here’s today’s roundup:</p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content" role="none" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" style="padding:0;Margin:0">
+                                                        <table align="center" bgcolor="#ffffff" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content-body" role="none" style="border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="left" style="padding:0;Margin:0;padding-left:20px;padding-right:20px">
+                                                                        <table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" style="padding:0;Margin:0;width:560px" valign="top">
+                                                                                        <table cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="100%">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="center" style="padding:10px;Margin:0;font-size:0">
+                                                                                                        <table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="100%">
+                                                                                                            <tbody>
+                                                                                                                <tr>
+                                                                                                                    <td style="padding:0;Margin:0;border-bottom:0px solid #cccccc;background:unset;height:0px;width:100%;margin:0px"></td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content" role="none" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" style="padding:0;Margin:0">
+                                                        <table align="center" bgcolor="#ffffff" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content-body" role="none" style="border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="left" style="padding:0;Margin:0">
+                                                                        <table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" style="padding:0;Margin:0;width:600px" valign="top">
+                                                                                        <table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;background-color:#ffffff" width="100%">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" class="m_-4901284468925022273es-m-txt-l" style="Margin:0;padding-bottom:10px;padding-top:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <h3 style="Margin:0;line-height:18px;font-family:recursive,sans-serif;font-size:15px;font-style:normal;font-weight:bold;color:#000000">NEWS</h3>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="center" style="padding:0;Margin:0;padding-bottom:20px;font-size:0">
+                                                                                                        <table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%">
+                                                                                                            <tbody>
+                                                                                                                <tr>
+                                                                                                                    <td style="padding:0;Margin:0;border-bottom:1px solid #000000;background:unset;height:0px;width:100%;margin:0px"></td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px;padding-left:20px;padding-right:20px">
+                                                                                                        <h2 style="Margin:0;line-height:20.4px;font-family:'ibm plex sans',sans-serif;font-size:17px;font-style:normal;font-weight:bold;color:#000000"><a href="https://techcrunch.com/2025/08/29/meta-updates-chatbot-rules-to-avoid-inappropriate-topics-with-teen-users/" style="text-decoration:none;color:#000000;">1. Meta updates chatbot rules to avoid inappropriate topics with teen users</a></h2>
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#333333;font-size:15px; padding-top: 5px;">Coverage: After reports of Meta’s AI chatbots having inappropriate conversations with minors, Meta is restricting its bots from engaging with teens about self-harm, suicide, eating disorders, and limiting certain AI personalities.</p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr><td align="center" style="padding:15px;Margin:0;font-size:0"><table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%"><tbody><tr><td style="padding:0;Margin:0;border-bottom:1px solid #cccccc;background:unset;height:0px;width:100%;margin:0px"></td></tr></tbody></table></td></tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px;padding-left:20px;padding-right:20px">
+                                                                                                        <h2 style="Margin:0;line-height:20.4px;font-family:'ibm plex sans',sans-serif;font-size:17px;font-style:normal;font-weight:bold;color:#000000"><a href="https://techcrunch.com/2025/08/29/mastodon-says-it-doesnt-have-the-means-to-comply-with-age-verification-laws/" style="text-decoration:none;color:#000000;">2. Mastodon says it doesn't 'have the means' to comply with age verification laws</a></h2>
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#333333;font-size:15px; padding-top: 5px;">Coverage: Mastodon’s decentralized network says it cannot enforce age verification for users; individual server owners must decide how to handle such laws.</p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr><td align="center" style="padding:15px;Margin:0;font-size:0"><table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%"><tbody><tr><td style="padding:0;Margin:0;border-bottom:1px solid #cccccc;background:unset;height:0px;width:100%;margin:0px"></td></tr></tbody></table></td></tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px;padding-left:20px;padding-right:20px">
+                                                                                                        <h2 style="Margin:0;line-height:20.4px;font-family:'ibm plex sans',sans-serif;font-size:17px;font-style:normal;font-weight:bold;color:#000000"><a href="https://techcrunch.com/2025/08/29/microsoft-and-uber-alum-raises-3m-for-yc-backed-munify-a-neobank-for-the-egyptian-diaspora/" style="text-decoration:none;color:#000000;">3. Microsoft and Uber alum raises $3M for YC-backed Munify, a neobank for the Egyptian diaspora</a></h2>
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#333333;font-size:15px; padding-top: 5px;">Coverage: Khalid Ashmawy launched Munify to help Egyptians abroad send money home and offer cross-border banking.</p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr><td align="center" style="padding:15px;Margin:0;font-size:0"><table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%"><tbody><tr><td style="padding:0;Margin:0;border-bottom:1px solid #cccccc;background:unset;height:0px;width:100%;margin:0px"></td></tr></tbody></table></td></tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px;padding-left:20px;padding-right:20px">
+                                                                                                        <h2 style="Margin:0;line-height:20.4px;font-family:'ibm plex sans',sans-serif;font-size:17px;font-style:normal;font-weight:bold;color:#000000"><a href="https://techcrunch.com/2025/08/29/whatsapp-fixes-zero-click-bug-used-to-hack-apple-users-with-spyware/" style="text-decoration:none;color:#000000;">4. WhatsApp fixes 'zero-click' bug used to hack Apple users with spyware</a></h2>
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#333333;font-size:15px; padding-top: 5px;">Coverage: WhatsApp patched a critical vulnerability that allowed targeted attacks (“zero-click” spyware) against iPhone and Mac users.</p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr><td align="center" style="padding:15px;Margin:0;font-size:0"><table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%"><tbody><tr><td style="padding:0;Margin:0;border-bottom:1px solid #cccccc;background:unset;height:0px;width:100%;margin:0px"></td></tr></tbody></table></td></tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px;padding-left:20px;padding-right:20px">
+                                                                                                        <h2 style="Margin:0;line-height:20.4px;font-family:'ibm plex sans',sans-serif;font-size:17px;font-style:normal;font-weight:bold;color:#000000"><a href="https://finance.yahoo.com/news/billionaire-ambani-taps-google-meta-131910370.html" style="text-decoration:none;color:#000000;">5. Billionaire Ambani taps Google, Meta to build India's AI backbone</a></h2>
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#333333;font-size:15px; padding-top: 5px;">Coverage: Reliance announced a new AI subsidiary and partnerships with Google, Meta, and possibly OpenAI to drive India’s AI infrastructure.</p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr><td align="center" style="padding:15px;Margin:0;font-size:0"><table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%"><tbody><tr><td style="padding:0;Margin:0;border-bottom:1px solid #cccccc;background:unset;height:0px;width:100%;margin:0px"></td></tr></tbody></table></td></tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px;padding-left:20px;padding-right:20px">
+                                                                                                        <h2 style="Margin:0;line-height:20.4px;font-family:'ibm plex sans',sans-serif;font-size:17px;font-style:normal;font-weight:bold;color:#000000"><a href="https://www.bbc.com/news/articles/ckgdjx0vgn3o" style="text-decoration:none;color:#000000;">6. Tesla challenges $243 million verdict in Autopilot death trial</a></h2>
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#333333;font-size:15px; padding-top: 5px;">Coverage: Tesla is appealing a $243M verdict over a fatal Autopilot-related crash, seeking to overturn or reduce the damages.</p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr><td align="center" style="padding:15px;Margin:0;font-size:0"><table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%"><tbody><tr><td style="padding:0;Margin:0;border-bottom:1px solid #cccccc;background:unset;height:0px;width:100%;margin:0px"></td></tr></tbody></table></td></tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:5px;padding-left:20px;padding-right:20px">
+                                                                                                        <h2 style="Margin:0;line-height:20.4px;font-family:'ibm plex sans',sans-serif;font-size:17px;font-style:normal;font-weight:bold;color:#000000"><a href="https://techcrunch.com/2025/08/15/tech-layoffs-2025-list/" style="text-decoration:none;color:#000000;">7. A comprehensive list of 2025 tech layoffs</a></h2>
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#333333;font-size:15px; padding-top: 5px;">Coverage: Continuously updated tracker of all the major layoffs in tech, from startups to giants, in 2025.</p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                 <tr><td align="center" style="padding:15px;Margin:0;font-size:0"><table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%"><tbody><tr><td style="padding:0;Margin:0;border-bottom:1px solid #cccccc;background:unset;height:0px;width:100%;margin:0px"></td></tr></tbody></table></td></tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <h2 style="Margin:0;line-height:20.4px;font-family:'ibm plex sans',sans-serif;font-size:17px;font-style:normal;font-weight:bold;color:#000000"><a href="https://techcrunch.com/2024/12/26/the-fall-of-ev-startup-fisker-a-comprehensive-timeline/" style="text-decoration:none;color:#000000;">8. Henrik Fisker quietly wound down his nonprofit after his EV startup went bankrupt</a></h2>
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#333333;font-size:15px; padding-top: 5px;">Coverage: Details Fisker’s decline, bankruptcy, and the winding down of related nonprofit activity.</p>
+                                                                                                    </td>
+                                                                                                </tr>
 
-              <p><strong>2. Mastodon says it doesn't 'have the means' to comply with age verification laws</strong><br>
-              <a href="https://techcrunch.com/2025/08/29/mastodon-says-it-doesnt-have-the-means-to-comply-with-age-verification-laws/">Read on TechCrunch</a></p>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content" role="none" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" style="padding:0;Margin:0">
+                                                        <table align="center" bgcolor="#ffffff" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content-body" role="none" style="border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="left" style="padding:0;Margin:0">
+                                                                        <table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" style="padding:0;Margin:0;width:600px" valign="top">
+                                                                                        <table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;background-color:#ffffff" width="100%">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" class="m_-4901284468925022273es-m-txt-l" style="Margin:0;padding-bottom:10px;padding-top:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <h3 style="Margin:0;line-height:18px;font-family:recursive,sans-serif;font-size:15px;font-style:normal;font-weight:bold;color:#000000">HACKATHONS</h3>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="center" style="padding:0;Margin:0;padding-bottom:20px;font-size:0">
+                                                                                                        <table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%">
+                                                                                                            <tbody>
+                                                                                                                <tr>
+                                                                                                                    <td style="padding:0;Margin:0;border-bottom:1px solid #000000;background:unset;height:0px;width:100%;margin:0px"></td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px"><a href="https://reskilll.com/hack/hereindia" style="text-decoration:none;color:#2D59F5;font-weight:bold;">HERE India Hackathon: Women in Tech</a></p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px"><a href="https://vision.hack2skill.com/event/genaiexchangehackathon?utm_source=hack2skill&utm_medium=homepage" style="text-decoration:none;color:#2D59F5;font-weight:bold;">Gen AI Exchange Hackathon</a></p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px"><a href="https://revenuecat-shipaton-2025.devpost.com/register" style="text-decoration:none;color:#2D59F5;font-weight:bold;">RevenueCat Shipaton 2025</a></p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px"><a href="https://hackvortex-codestorm-5.devpost.com/register?flow[data][challenge_id]=22991&flow[name]=register_for_challenge" style="text-decoration:none;color:#2D59F5;font-weight:bold;">HackVortex Codestorm 5</a></p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px"><a href="https://hackodisha-4.devfolio.co/overview" style="text-decoration:none;color:#2D59F5;font-weight:bold;">HackOdisha 5.0</a></p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                 <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px;font-weight:bold;">Space Apps Challenge Noida</p>
+                                                                                                        <ul style="margin: 5px 0 0 20px; padding:0; list-style-type: disc;">
+                                                                                                            <li style="font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:20px;color:#333333;font-size:14px; margin-bottom: 5px;"><b>Date:</b> September 7, 2025</li>
+                                                                                                            <li style="font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:20px;color:#333333;font-size:14px; margin-bottom: 5px;"><b>Theme:</b> Space technology, NASA-themed problems</li>
+                                                                                                            <li style="font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:20px;color:#333333;font-size:14px; margin-bottom: 5px;"><b>Eligibility:</b> Open</li>
+                                                                                                            <li style="font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:20px;color:#333333;font-size:14px;"><a href="https://thenewviews.com/upcoming-hackathons-in-india/" style="color:#2D59F5;">Event details</a></li>
+                                                                                                        </ul>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px;font-weight:bold;">India Open Hackathon</p>
+                                                                                                        <ul style="margin: 5px 0 0 20px; padding:0; list-style-type: disc;">
+                                                                                                            <li style="font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:20px;color:#333333;font-size:14px; margin-bottom: 5px;"><b>Dates:</b> September 18–26, 2025</li>
+                                                                                                            <li style="font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:20px;color:#333333;font-size:14px; margin-bottom: 5px;"><b>Theme:</b> Hybrid innovation (NVIDIA/OpenACC partnership)</li>
+                                                                                                            <li style="font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:20px;color:#333333;font-size:14px; margin-bottom: 5px;"><b>Deadline:</b> Apply by August 19, 2025</li>
+                                                                                                            <li style="font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:20px;color:#333333;font-size:14px; margin-bottom: 5px;"><b>Eligibility:</b> Open to all</li>
+                                                                                                            <li style="font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:20px;color:#333333;font-size:14px;"><a href="https://thenewviews.com/upcoming-hackathons-in-india/" style="color:#2D59F5;">Details</a></li>
+                                                                                                        </ul>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content" role="none" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" style="padding:0;Margin:0">
+                                                        <table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content-body" role="none" style="border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="left" style="padding:0;Margin:0">
+                                                                        <table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" style="padding:0;Margin:0;width:600px" valign="top">
+                                                                                        <table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;background-color:#ffffff" width="100%">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" class="m_-4901284468925022273es-m-txt-l" style="Margin:0;padding-bottom:10px;padding-top:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <h3 style="Margin:0;line-height:18px;font-family:recursive,sans-serif;font-size:15px;font-style:normal;font-weight:bold;color:#000000">INTERNSHIPS</h3>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="center" style="padding:0;Margin:0;padding-bottom:20px;font-size:0">
+                                                                                                        <table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%">
+                                                                                                            <tbody>
+                                                                                                                <tr>
+                                                                                                                    <td style="padding:0;Margin:0;border-bottom:1px solid #000000;background:unset;height:0px;width:100%;margin:0px"></td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px"><a href="https://job-boards.greenhouse.io/enterpret/jobs/6691182003?gh_src=p9f0iznr3us" style="text-decoration:none;color:#2D59F5;font-weight:bold;">Enterpret Software Engineer Intern</a></p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px"><a href="https://browserstack.wd3.myworkdayjobs.com/en-US/External/job/Mumbai---Work-From-Office/Software-Development-Engineer---Backend--2025-passout-_JR102583-1/apply/applyManually" style="text-decoration:none;color:#2D59F5;font-weight:bold;">BrowserStack Software Development Engineer – Backend (2025)</a></p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px"><a href="https://jobs.standardchartered.com/job/Chennai-Development-Engineer/828282702/" style="text-decoration:none;color:#2D59F5;font-weight:bold;">Standard Chartered Development Engineer</a></p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px"><a href="https://jobs.birlasoft.com/job/Hyderabad-Application-Developer-INDI/43125844/" style="text-decoration:none;color:#2D59F5;font-weight:bold;">Birlasoft Application Developer</a></p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px"><a href="https://www.rubrik.com/company/careers/departments/job.7208329?gh_jid=7208329&gh_src=2e352a8a1us" style="text-decoration:none;color:#2D59F5;font-weight:bold;">Rubrik Software Engineer – Winter Intern</a></p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content" role="none" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" style="padding:0;Margin:0">
+                                                        <table align="center" bgcolor="#ffffff" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content-body" role="none" style="border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="left" style="padding:0;Margin:0">
+                                                                        <table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" style="padding:0;Margin:0;width:600px" valign="top">
+                                                                                        <table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;background-color:#ffffff" width="100%">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" class="m_-4901284468925022273es-m-txt-l" style="Margin:0;padding-bottom:10px;padding-top:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <h3 style="Margin:0;line-height:18px;font-family:recursive,sans-serif;font-size:15px;font-style:normal;font-weight:bold;color:#000000">AI TOOL - WRAP</h3>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="center" style="padding:0;Margin:0;padding-bottom:10px;font-size:0">
+                                                                                                        <table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="100%">
+                                                                                                            <tbody>
+                                                                                                                <tr>
+                                                                                                                    <td style="padding:0;Margin:0;border-bottom:1px solid #000000;background:unset;height:0px;width:100%;margin:0px"></td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:15px 20px;">
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px;">A blazingly fast, Rust-based terminal that's reimagined from the ground up to work like a modern app, with AI command search and workflows.</p>
+                                                                                                        <p style="Margin:10px 0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px;"><b>Link:</b> <a href="https://www.warp.dev/pricing?utm_source=youtube&utm_medium=influencer&utm_campaign=coding-agent&utm_content=tensorboy&coupon=TENSOR&type=dollar&plan=pro&amount=1&fbclid=PAVERDUAMfjRVleHRuA2FlbQIxMAABp6_HE4ZReBlFYFz8yxTeCY2SItgUGJRc92PzKJjrjYcL8LC_jz-prFYZUJr5_aem_Zm5w7VrYdRbzq2I2hvIfyw" style="color:#2D59F5;">https://www.warp.dev/</a></p>
+                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px;"><b>How to use:</b> <a href="https://www.instagram.com/reel/DNiyjxMSZ3C/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" style="color:#2D59F5;">Watch Reel</a></p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content" role="none" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" style="padding:0;Margin:0">
+                                                        <table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content-body" role="none" style="border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="left" style="padding:0;Margin:0">
+                                                                        <table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" style="padding:0;Margin:0;width:600px" valign="top">
+                                                                                        <table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;background-color:#ffffff" width="100%">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" class="m_-4901284468925022273es-m-txt-l" style="Margin:0;padding-bottom:10px;padding-top:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <h3 style="Margin:0;line-height:18px;font-family:recursive,sans-serif;font-size:15px;font-style:normal;font-weight:bold;color:#000000">TOP TUTORIALS</h3>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="center" style="padding:0;Margin:0;padding-bottom:20px;font-size:0">
+                                                                                                        <table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%">
+                                                                                                            <tbody>
+                                                                                                                <tr>
+                                                                                                                    <td style="padding:0;Margin:0;border-bottom:1px solid #000000;background:unset;height:0px;width:100%;margin:0px"></td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <h2 style="Margin:0;line-height:20.4px;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;font-size:17px;font-style:normal;font-weight:bold;color:#000000"><a href="https://www.ssp.sh/brain/will-ai-replace-humans/" style="text-decoration:none;color:#000000;">Will AI Replace Human Thinking? The Case for Writing and Coding Manually</a></h2>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="center" style="padding:15px;Margin:0;font-size:0">
+                                                                                                        <table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="95%">
+                                                                                                            <tbody>
+                                                                                                                <tr>
+                                                                                                                    <td style="padding:0;Margin:0;border-bottom:1px solid #cccccc;background:unset;height:0px;width:100%;margin:0px"></td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                                                                                        <h2 style="Margin:0;line-height:20.4px;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;font-size:17px;font-style:normal;font-weight:bold;color:#000000"><a href="https://www.youtube.com/watch?v=GfH4QL4VqJ0" style="text-decoration:none;color:#000000;">The free Python documentary 'Python: The Documentary | An origin story' is now available on YouTube</a></h2>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
 
-              <p><strong>3. Microsoft and Uber alum raises $3M for YC-backed Munify</strong><br>
-              <a href="https://techcrunch.com/2025/08/29/microsoft-and-uber-alum-raises-3m-for-yc-backed-munify-a-neobank-for-the-egyptian-diaspora/">Read on TechCrunch</a></p>
 
-              <p><strong>4. WhatsApp fixes 'zero-click' bug used to hack Apple users</strong><br>
-              <a href="https://techcrunch.com/2025/08/29/whatsapp-fixes-zero-click-bug-used-to-hack-apple-users-with-spyware/">Read on TechCrunch</a></p>
-
-              <p><strong>5. Billionaire Ambani taps Google, Meta to build India's AI backbone</strong><br>
-              <a href="https://finance.yahoo.com/news/billionaire-ambani-taps-google-meta-131910370.html">Read Coverage</a></p>
-
-              <p><strong>6. Tesla challenges $243 million verdict in Autopilot death trial</strong><br>
-              <a href="https://www.bbc.com/news/articles/ckgdjx0vgn3o">Read Coverage</a></p>
-
-              <p><strong>7. A comprehensive list of 2025 tech layoffs</strong><br>
-              <a href="https://techcrunch.com/2025/08/15/tech-layoffs-2025-list/">Read on TechCrunch</a></p>
-
-              <p><strong>8. Henrik Fisker quietly wound down his nonprofit after his EV startup went bankrupt</strong><br>
-              <a href="https://techcrunch.com/2024/12/26/the-fall-of-ev-startup-fisker-a-comprehensive-timeline/">Read on TechCrunch</a></p>
-
-              <h2>Top Tutorials</h2>
-              <p><a href="https://www.ssp.sh/brain/will-ai-replace-humans/">Will AI Replace Human Thinking? The Case for Writing and Coding Manually</a></p>
-              <p><a href="https://www.youtube.com/watch?v=GfH4QL4VqJ0">Python: The Documentary | An origin story</a></p>
-
-            </td>
-          </tr>
+                                        <table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content" role="none" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%"><tbody><tr><td align="center" style="padding:0;Margin:0"><table align="center" bgcolor="#ffffff" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content-body" role="none" style="border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"><tbody><tr><td align="left" style="padding:0;Margin:0;padding-left:20px;padding-right:20px"><table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px" width="100%"><tbody><tr><td align="center" style="padding:0;Margin:0;width:560px" valign="top"><table cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="100%"><tbody><tr><td align="center" style="padding:15px;Margin:0;font-size:0"><table border="0" cellpadding="0" cellspacing="0" height="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px" width="100%"><tbody><tr><td style="padding:0;Margin:0;border-bottom:0px solid #cccccc;background:unset;height:0px;width:100%;margin:0px"></td>
+</tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table>
+<table align="center" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content" role="none" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%"><tbody><tr><td align="center" style="padding:0;Margin:0"><table align="center" bgcolor="#ffffff" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-content-body" role="none" style="border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"><tbody><tr><td align="left" style="padding:0;Margin:0"><table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px" width="100%"><tbody><tr><td align="center" style="padding:0;Margin:0;width:600px" valign="top"><table bgcolor="#ffffff" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;background-color:#ffffff" width="100%"><tbody><tr><td align="center" class="m_-4901284468925022273es-m-txt-c" style="padding:15px;Margin:0"><p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:24px;color:#000000;font-size:16px"><strong>If you're enjoying this newsletter please forward this email to a colleague.&nbsp;</strong></p>
+<p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:24px;color:#000000;font-size:16px">It helps us keep this content free.</p></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
         </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
-
+    </div>
+</div>
 `;
 
 const zeptoClient = new SendMailClient({
