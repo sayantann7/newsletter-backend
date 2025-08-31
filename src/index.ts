@@ -782,12 +782,12 @@ const test_body_html = `
                                         <table align="center" bgcolor="#000000" cellpadding="0" cellspacing="0" class="m_-4901284468925022273es-header-body" role="none" style="border-collapse:collapse;border-spacing:0px;background-color:#000000;width:600px">
                                             <tbody>
                                                 <tr>
-                                                    <td align="left" bgcolor="#000000" style="padding:0;Margin:0;background-color:#000000;color:#b8460e">
+                                                    <td align="left" bgcolor="#000000" style="padding:0;Margin:0;background-color:#ffffff;color:#b8460e">
                                                         <table cellpadding="0" cellspacing="0" role="none" style="border-collapse:collapse;border-spacing:0px" width="100%">
                                                             <tbody>
                                                                 <tr>
                                                                     <td align="center" style="padding:0;Margin:0;width:600px" valign="top">
-                                                                        <table cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000" width="100%">
+                                                                        <table cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;" width="100%">
                                                                             <tbody>
                                                                                 <tr>
                                                                                 </tr>
@@ -801,9 +801,9 @@ const test_body_html = `
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:15px;padding-right:15px;color:#b8460e">
-                                                                                        <p style="Margin:0;font-family:monospace;line-height:24px;color:#b8460e;font-size:16px">🚀 Episode 3 of Tensor Protocol</p>
-                                                                                        <p style="Margin:0;font-family:monospace;line-height:24px;color:#b8460e;font-size:16px"><br></p>
-                                                                                        <p style="Margin:0;font-family:monospace;line-height:24px;color:#b8460e;font-size:16px">This week's AI & Tech highlights</p>
+                                                                                        <p style="Margin:0;font-family:monospace;line-height:24px;color:#b8460e;font-size:22px;font-weight: bold;">🚀 Episode 3 of Tensor Protocol</p>
+                                                                                        <br>
+                                                                                        <p style="Margin:0;font-family:monospace;line-height:24px;color:#b8460e;font-size:16px; font-weight: bold;">This week's AI & Tech highlights</p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
@@ -1012,27 +1012,14 @@ const test_body_html = `
                                                                                                         <p style="Margin:0;font-family:monospace;line-height:22.5px;color:#000000;font-size:15px"><a href="https://hackodisha-4.devfolio.co/overview" style="text-decoration:none;color:#b8460e;font-weight:bold;">HackOdisha 5.0</a></p>
                                                                                                     </td>
                                                                                                 </tr>
-                                                                                                 <tr>
+                                                                                                <tr>
                                                                                                     <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
-                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px;font-weight:bold;">Space Apps Challenge Noida</p>
-                                                                                                        <ul style="margin: 5px 0 0 20px; padding:0; list-style-type: disc;">
-                                                                                                            <li style="font-family:monospace;line-height:20px;color:#000000;font-size:14px; margin-bottom: 5px;"><b>Date:</b> September 7, 2025</li>
-                                                                                                            <li style="font-family:monospace;line-height:20px;color:#000000;font-size:14px; margin-bottom: 5px;"><b>Theme:</b> Space technology, NASA-themed problems</li>
-                                                                                                            <li style="font-family:monospace;line-height:20px;color:#000000;font-size:14px; margin-bottom: 5px;"><b>Eligibility:</b> Open</li>
-                                                                                                            <li style="font-family:monospace;line-height:20px;color:#000000;font-size:14px;"><a href="https://thenewviews.com/upcoming-hackathons-in-india/" style="color:#b8460e;">Event details</a></li>
-                                                                                                        </ul>
+                                                                                                        <p style="Margin:0;font-family:monospace;line-height:22.5px;color:#000000;font-size:15px"><a href="https://thenewviews.com/upcoming-hackathons-in-india/" style="text-decoration:none;color:#b8460e;font-weight:bold;">Space Apps Challenge Noida</a></p>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td align="left" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px">
-                                                                                                        <p style="Margin:0;font-family:roboto,'helvetica neue',helvetica,arial,sans-serif;line-height:22.5px;color:#000000;font-size:15px;font-weight:bold;">India Open Hackathon</p>
-                                                                                                        <ul style="margin: 5px 0 0 20px; padding:0; list-style-type: disc;">
-                                                                                                            <li style="font-family:monospace;line-height:20px;color:#000000;font-size:14px; margin-bottom: 5px;"><b>Dates:</b> September 18–26, 2025</li>
-                                                                                                            <li style="font-family:monospace;line-height:20px;color:#000000;font-size:14px; margin-bottom: 5px;"><b>Theme:</b> Hybrid innovation (NVIDIA/OpenACC partnership)</li>
-                                                                                                            <li style="font-family:monospace;line-height:20px;color:#000000;font-size:14px; margin-bottom: 5px;"><b>Deadline:</b> Apply by August 19, 2025</li>
-                                                                                                            <li style="font-family:monospace;line-height:20px;color:#000000;font-size:14px; margin-bottom: 5px;"><b>Eligibility:</b> Open to all</li>
-                                                                                                            <li style="font-family:monospace;line-height:20px;color:#000000;font-size:14px;"><a href="https://thenewviews.com/upcoming-hackathons-in-india/" style="color:#b8460e;">Details</a></li>
-                                                                                                        </ul>
+                                                                                                        <p style="Margin:0;font-family:monospace;line-height:22.5px;color:#000000;font-size:15px"><a href="https://thenewviews.com/upcoming-hackathons-in-india/" style="text-decoration:none;color:#b8460e;font-weight:bold;">India Open Hackathon</a></p>
                                                                                                     </td>
                                                                                                 </tr>
                                                                                             </tbody>
