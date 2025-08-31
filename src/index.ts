@@ -737,41 +737,32 @@ const test_body_html = `
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <style type="text/css">
-            /* Mobile-first baseline (Gmail safe). Larger screens enhanced via min-width queries. */
-            body, table, td { -webkit-text-size-adjust: 100%; }
-            .h1 { font-size:24px; line-height:1.3; }
-            .h2 { font-size:19px; line-height:1.4; }
-            .h3 { font-size:16px; }
-            .txt, .txt li { font-size:15px; line-height:1.55; }
-            .pad-lg { padding:24px 20px 20px 20px; }
-            .pad-sec { padding:16px 20px 12px 20px; }
-            .pad-card { padding:20px 20px 12px 20px; }
-            a { word-break:break-word; }
-            td, p, li { word-break:break-word; }
-            table.ct { width:100%!important; max-width:100%!important; }
-            /* Desktop / larger screens */
-            @media only screen and (min-width:600px) {
-                .ct { max-width:840px !important; }
-                .pad-lg { padding:36px 36px 28px 36px !important; }
-                .pad-sec { padding:20px 36px 12px 36px !important; }
-                .pad-card { padding:24px 28px 14px 28px !important; }
-                .h1 { font-size:28px !important; }
-                .h2 { font-size:22px !important; }
-                .h3 { font-size:18px !important; }
-                .txt, .txt li { font-size:16px !important; line-height:1.7 !important; }
-            }
-            @media only screen and (min-width:1024px) {
-                .ct { max-width:1000px !important; }
-            }
+            /* Minimal, inline-friendly styles (structure mirrors reference test.html). */
+            body, table, td, p, a, li { -webkit-text-size-adjust:100%; }
+            table { border-collapse:collapse; }
+            img { border:0; outline:none; text-decoration:none; display:block; }
+            /* Slightly larger base sizes so they remain legible after Gmail mobile shrink-to-fit. */
+            .h1 { font-size:24px; line-height:1.28; }
+            .h2 { font-size:21px; line-height:1.32; }
+            .h3 { font-size:17px; line-height:1.34; }
+            .txt, .txt li { font-size:16px; line-height:1.6; }
+            .txt li { margin:0 0 8px 0; }
+            /* Mild global padding helpers (applied only where classes exist). */
+            .pad-lg { padding:28px 22px 22px 22px !important; }
+            .pad-sec { padding:18px 22px 14px 22px !important; }
+            .pad-card { padding:20px 18px 14px 18px !important; }
+            a { color:#b8460e; text-decoration:none; }
+            /* Fixed container width like reference (Gmail scales on mobile). */
+            .container { width:600px; max-width:600px; }
         </style>
     </head>
     <body style="margin:0; padding:0; background:#f6f8fb;">
         <!-- Wrapper -->
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f6f8fb;">
-            <tr>
-    <td align="center" style="padding:24px;" class="wr">
-                    <!-- Container -->
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ct" style="background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f6f8fb;" bgcolor="#f6f8fb">
+        <tr>
+            <td align="center" style="padding:24px;">
+                <!-- Outer fixed-width wrapper (mirrors reference structure) -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="container" style="background:#ffffff; width:600px; max-width:600px; border-radius:12px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,0.04);" bgcolor="#ffffff">
                         <!-- Header -->
                         <tr>
                             <td style="background:#000000; color:#b8460e; font-family:monospace;" class="pad-lg">
@@ -918,11 +909,11 @@ const test_body_html = `
                                 </div>
                             </td>
                         </tr>
-                    </table>
-                    <!-- /Container -->
-                </td>
-            </tr>
-        </table>
+                </table>
+                <!-- /Outer fixed-width wrapper -->
+            </td>
+        </tr>
+    </table>
         <!-- /Wrapper -->
     </body>
     </html>
