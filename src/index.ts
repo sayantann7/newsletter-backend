@@ -776,7 +776,7 @@ const test_body_html = `
                         <tr>
                             <td style="padding:36px; font-family:monospace;" class="pad-lg">
                                 <h2 style="color:#111; font-weight:300; font-size:22px; line-height:1.5; margin:0;" class="h2">
-                                    Episode 2 of Tensor Protocol 🚀
+                                    Episode 3 of Tensor Protocol 🚀
                                 </h2>
                             </td>
                         </tr>
@@ -788,14 +788,26 @@ const test_body_html = `
                                     <tr>
                                         <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
                                             <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">Hackathons</h3>
-                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.8;" class="txt">
-                                                <li><a href="https://hackodisha-4.devfolio.co/?ref=cb69774eda" style="color:#b8460e; text-decoration:none; font-weight:600;">HackOdisha 5.0</a></li>
-                                                <li><a href="https://lu.ma/T1-Hack25-Delhi" style="color:#b8460e; text-decoration:none; font-weight:600;">Team1 Hackathon</a></li>
-                                                <li><a href="https://unstop.com/hackathons/hackshastra-hackshastra-1544473" style="color:#b8460e; text-decoration:none; font-weight:600;">HackShastra</a></li>
-                                                <li><a href="https://www.naukri.com/campus/contests/32816?action=enrol&utm_source=32816_conteststartmail&utm_medium=email&utm_campaign=contestinformation&utm_content=930_naukri_campus_contest_reg_start_1_day_naukri_campus_contest_reg_start_1_day_start_b5a9&utm_term=655774" style="color:#b8460e; text-decoration:none; font-weight:600;">HP Dreams Unlocked</a></li>
-                                                <li><a href="https://unstop.com/hackathons/nextgen-hackathon-soft-computing-research-society-new-delhi-delhi-1543393?lb=KgDPHgd5&utm_medium=Share&utm_source=nikhisin5306&utm_campaign=Innovation_challenge" style="color:#b8460e; text-decoration:none; font-weight:600;">NextGen Hackathon</a></li>
-                                                <li><a href="https://unstop.com/hackathons/nextgen-hackathon-soft-computing-research-society-new-delhi-delhi-1543393?lb=KgDPHgd5&utm_medium=Share&utm_source=nikhisin5306&utm_campaign=Innovation_challenge" style="color:#b8460e; text-decoration:none; font-weight:600;">Fintech AI Hackathon</a></li>
+                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.6;" class="txt">
+                                                <li><a href="https://reskilll.com/hack/hereindia" style="color:#b8460e; text-decoration:none; font-weight:600;">HERE India Hackathon: Women in Tech</a></li>
+                                                <li>Gen AI Exchange Hackathon – <a href="https://vision.hack2skill.com/event/genaiexchangehackathon?utm_source=hack2skill&utm_medium=homepage" style="color:#b8460e; text-decoration:none;">Register</a></li>
+                                                <li>RevenueCat Shipaton 2025 – <a href="https://revenuecat-shipaton-2025.devpost.com/register" style="color:#b8460e; text-decoration:none;">Register</a></li>
+                                                <li>HackVortex Codestorm 5 – <a href="https://hackvortex-codestorm-5.devpost.com/register?flow%5Bdata%5D%5Bchallenge_id%5D=22991&flow%5Bname%5D=register_for_challenge" style="color:#b8460e; text-decoration:none;">Register</a></li>
+                                                <li>HackOdisha 5.0 – <a href="https://hackodisha-4.devfolio.co/overview" style="color:#b8460e; text-decoration:none;">Overview</a></li>
                                             </ul>
+                                            <div style="margin-top:14px; font-size:14px; line-height:1.6; font-family:monospace;">
+                                                <strong>Space Apps Challenge Noida</strong><br>
+                                                <em>Date:</em> September 7, 2025<br>
+                                                <em>Theme:</em> Space technology, NASA-themed problems<br>
+                                                <em>Eligibility:</em> Open<br>
+                                                <em>Website:</em> <a href="https://thenewviews.com/upcoming-hackathons-in-india/" style="color:#b8460e; text-decoration:none;">Event details</a><br><br>
+                                                <strong>India Open Hackathon</strong><br>
+                                                <em>Dates:</em> September 18–26, 2025<br>
+                                                <em>Theme:</em> Hybrid innovation (NVIDIA/OpenACC partnership)<br>
+                                                <em>Deadline:</em> Apply by August 19, 2025<br>
+                                                <em>Eligibility:</em> Open to all<br>
+                                                <em>Website:</em> <a href="https://thenewviews.com/upcoming-hackathons-in-india/" style="color:#b8460e; text-decoration:none;">Details</a>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
@@ -809,12 +821,12 @@ const test_body_html = `
                                     <tr>
                                         <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
                                             <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">Internships</h3>
-                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.8;" class="txt">
-                                                <li>🚀 <a href="https://jobs.lever.co/upstox/f09dc8bb-d213-41cf-8289-ce48fec7d1a7" style="color:#b8460e; text-decoration:none; font-weight:600;">Upstox</a> Hiring SDE Frontend Intern | Freshers | 50k/month</li>
-                                                <li><a href="https://job-boards.greenhouse.io/66degrees/jobs/5629492004?gh_src=ec8883c14us" style="color:#b8460e; text-decoration:none; font-weight:600;">Associate Software Engineer, Gradient Specialist</a></li>
-                                                <li><a href="https://wd1.myworkdaysite.com/recruiting/wf/WellsFargoJobs/job/Bengaluru-India/Analytics-Associate--Global-Payments-and-Liquidity_R-482558-1" style="color:#b8460e; text-decoration:none; font-weight:600;">Analytics Associate – Global Payments and Liquidity</a></li>
-                                                <li><a href="https://careers.mastercard.com/us/en/job/MASRUSR257978EXTERNALENUS/Software-Engineer-I" style="color:#b8460e; text-decoration:none; font-weight:600;">Mastercard Software Engineer I</a> | Fresher | 17.6 LPA</li>
-                                                <li><a href="https://mcafee.wd1.myworkdayjobs.com/External/job/India-Bengaluru/Software-Development-Engineer_JR0032026" style="color:#b8460e; text-decoration:none; font-weight:600;">McAfee Software Development Engineer</a> | Fresher | 12.7 LPA</li>
+                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.6;" class="txt">
+                                                <li><strong>Enterpret Software Engineer Intern:</strong> <a href="https://job-boards.greenhouse.io/enterpret/jobs/6691182003?gh_src=p9f0iznr3us" style="color:#b8460e; text-decoration:none;">Apply</a></li>
+                                                <li><strong>BrowserStack SDE – Backend (2025):</strong> <a href="https://browserstack.wd3.myworkdayjobs.com/en-US/External/job/Mumbai---Work-From-Office/Software-Development-Engineer---Backend--2025-passout-_JR102583-1/apply/applyManually" style="color:#b8460e; text-decoration:none;">Application</a></li>
+                                                <li><strong>Standard Chartered Development Engineer:</strong> <a href="https://jobs.standardchartered.com/job/Chennai-Development-Engineer/828282702/" style="color:#b8460e; text-decoration:none;">Details</a> <em style="color:#555;">(Sign up / login may be required)</em></li>
+                                                <li><strong>Birlasoft Application Developer:</strong> <a href="https://jobs.birlasoft.com/job/Hyderabad-Application-Developer-INDI/43125844/" style="color:#b8460e; text-decoration:none;">Listing</a></li>
+                                                <li><strong>Rubrik Software Engineer – Winter Intern:</strong> <a href="https://www.rubrik.com/company/careers/departments/job.7208329?gh_jid=7208329&gh_src=2e352a8a1us" style="color:#b8460e; text-decoration:none;">Apply</a></li>
                                             </ul>
                                         </td>
                                     </tr>
@@ -828,10 +840,10 @@ const test_body_html = `
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
                                     <tr>
                                         <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
-                                            <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">AI Tool - PRERPLEXITY COMET -</h3>
-                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.8;" class="txt">
-                                                <li><strong>Link:</strong> <a href="https://www.perplexity.ai/comet" style="color:#b8460e; text-decoration:none; font-weight:600;">Perplexity Comet</a></li>
-                                                <li><strong>How you can use:</strong> <a href="https://www.instagram.com/reel/DNiyjxMSZ3C/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" style="color:#b8460e; text-decoration:none;">Instagram Reel Guide</a></li>
+                                            <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">AI Tool - Warp</h3>
+                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.6;" class="txt">
+                                                <li><strong>Link:</strong> <a href="https://www.warp.dev/pricing?utm_source=youtube&utm_medium=influencer&utm_campaign=coding-agent&utm_content=tensorboy&coupon=TENSOR&type=dollar&plan=pro&amount=1&fbclid=PAVERDUAMfjRVleHRuA2FlbQIxMAABp6_HE4ZReBlFYFz8yxTeCY2SItgUGJRc92PzKJjrjYcL8LC_jz-prFYZUJr5_aem_Zm5w7VrYdRbzq2I2hvIfyw" style="color:#b8460e; text-decoration:none; font-weight:600;">Warp Pro Promo</a></li>
+                                                <li><strong>How you can use:</strong> <a href="https://www.instagram.com/reel/DNOE2JcytsQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" style="color:#b8460e; text-decoration:none;">Instagram Reel Guide</a></li>
                                             </ul>
                                         </td>
                                     </tr>
@@ -846,20 +858,15 @@ const test_body_html = `
                                     <tr>
                                         <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
                                             <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">News</h3>
-                                            <div style="margin:0; padding:0; color:#000; font-family:monospace; font-size:16px; line-height:1.7;" class="txt">
-                                                <strong><a href="https://podcasts.apple.com/us/podcast/amazon-is-betting-on-agents-to-win-the-ai-race/id1011668648?i=1000722930083" style="color:#b8460e; text-decoration:none;">🚀 Amazon's AGI Strategy: "Reverse Acquihires"</a></strong><br>
-                                                Amazon is conducting “reverse acquihires” – recruiting top researchers and giving them billion‑dollar compute clusters instead of traditional acquisitions. This pairs elite talent with massive resources in their AGI push.<br><br>
-                                                <strong><a href="https://openai.com/policies/unauthorized-openai-equity-transactions/?utm_source=newsletter.theresanaiforthat.com&utm_medium=newsletter&utm_campaign=amazon-s-agi-strategy-gpt-6&_bhlid=4be4b95a9a4b498345dc0a755ff06f41a7bc6542" style="color:#b8460e; text-decoration:none;">⚠️ OpenAI Equity Warning: SPV Shares Have No Value</a></strong><br>
-                                                OpenAI warns investors that unauthorized SPV share purchases carry no value or rights—mirroring Anthropic’s tighter ownership stance amid high demand.<br><br>
-                                                <strong><a href="https://www.theinformation.com/articles/nvidia-orders-halt-h20-production-china-directive-purchases?utm_source=newsletter.theresanaiforthat.com&utm_medium=newsletter&utm_campaign=amazon-s-agi-strategy-gpt-6&_bhlid=923033e5155fcfce786d94b3da57742a05eb1571" style="color:#b8460e; text-decoration:none;">🛡️ Nvidia Halts China Chip Shipments Amid Security Concerns</a></strong><br>
-                                                Nvidia pauses H20 AI processor shipments to China after regulatory warnings about “security risks,” underscoring geopolitical tension and China’s domestic chip ambitions.<br><br>
-                                                <strong><a href="https://api-docs.deepseek.com/news/news250821?utm_source=alphasignal&utm_campaign=2025-08-21&asuniq=e312e687" style="color:#b8460e; text-decoration:none;">🤖 Introducing DeepSeek-V3.1: Our first step toward the agent era! 🚀</a></strong>
-                                                <ul style="margin:0 0 0 18px; padding:0;">
-                                                    <li>🧠 Hybrid inference: Think & Non-Think — one model, two modes</li>
-                                                    <li>⚡️ Faster thinking: DeepSeek-V3.1 Think answers faster than DeepSeek-R1-0528</li>
-                                                    <li>🛠️ Stronger agent skills: Enhanced tool use & multi-step task handling</li>
-                                                </ul>
-                                                <br>
+                                            <div style="margin:0; padding:0; color:#000; font-family:monospace; font-size:15px; line-height:1.65;" class="txt">
+                                                <p style="margin:0 0 14px 0;"><strong>1. <a href="https://techcrunch.com/2025/08/29/meta-updates-chatbot-rules-to-avoid-inappropriate-topics-with-teen-users/" style="color:#b8460e; text-decoration:none;">Meta updates chatbot rules to avoid inappropriate topics with teen users</a></strong><br>Meta restricts AI chatbot interactions with teens around self-harm, suicide and eating disorders; certain AI personalities now limited.</p>
+                                                <p style="margin:0 0 14px 0;"><strong>2. <a href="https://techcrunch.com/2025/08/29/mastodon-says-it-doesnt-have-the-means-to-comply-with-age-verification-laws/" style="color:#b8460e; text-decoration:none;">Mastodon says it lacks means to comply with age verification laws</a></strong><br>Decentralized architecture leaves enforcement to individual server admins; no universal mechanism possible.</p>
+                                                <p style="margin:0 0 14px 0;"><strong>3. <a href="https://techcrunch.com/2025/08/29/microsoft-and-uber-alum-raises-3m-for-yc-backed-munify-a-neobank-for-the-egyptian-diaspora/" style="color:#b8460e; text-decoration:none;">YC-backed Munify raises $3M for Egyptian diaspora neobank</a></strong><br>Founder Khalid Ashmawy targets cross-border remittance + banking access for Egyptians abroad.</p>
+                                                <p style="margin:0 0 14px 0;"><strong>4. <a href="https://techcrunch.com/2025/08/29/whatsapp-fixes-zero-click-bug-used-to-hack-apple-users-with-spyware/" style="color:#b8460e; text-decoration:none;">WhatsApp patches zero-click spyware exploit</a></strong><br>Critical vulnerability enabling silent iPhone/Mac compromise has been fixed; users urged to update.</p>
+                                                <p style="margin:0 0 14px 0;"><strong>5. <a href="https://finance.yahoo.com/news/billionaire-ambani-taps-google-meta-131910370.html" style="color:#b8460e; text-decoration:none;">Ambani teams with Google & Meta on India AI backbone</a></strong><br>Reliance announces new AI subsidiary plus strategic partnerships to accelerate national infrastructure.</p>
+                                                <p style="margin:0 0 14px 0;"><strong>6. <a href="https://www.bbc.com/news/articles/ckgdjx0vgn3o" style="color:#b8460e; text-decoration:none;">Tesla challenges $243M Autopilot crash verdict</a></strong><br>Company appeals damages, seeking reduction or overturn in fatal crash judgment.</p>
+                                                <p style="margin:0 0 14px 0;"><strong>7. <a href="https://techcrunch.com/2025/08/15/tech-layoffs-2025-list/" style="color:#b8460e; text-decoration:none;">Comprehensive 2025 tech layoffs tracker</a></strong><br>Central list monitoring ongoing workforce reductions across startups and large tech.</p>
+                                                <p style="margin:0 0 0 0;"><strong>8. <a href="https://techcrunch.com/2024/12/26/the-fall-of-ev-startup-fisker-a-comprehensive-timeline/" style="color:#b8460e; text-decoration:none;">Henrik Fisker winds down nonprofit after EV startup collapse</a></strong><br>Timeline recounts bankruptcy progression and shuttered related initiatives.</p>
                                             </div>
                                         </td>
                                     </tr>
@@ -867,23 +874,6 @@ const test_body_html = `
                             </td>
                         </tr>
 
-                        <!-- Card: Fresh Jobs & Internships -->
-                        <tr>
-                            <td style="padding:16px 28px 6px 28px;" class="pad-sec">
-                                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
-                                    <tr>
-                                        <td style="padding:24px 28px 14px 28px;" class="pad-card txt">
-                                            <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">More Latest News</h3>
-                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.9;" class="txt">
-                                                <li><a href="https://elevenlabs.io/v3?utm_source=alphasignal&utm_campaign=2025-08-21&asuniq=0d002eee" style="color:#b8460e; text-decoration:none;">ElevenLabs launches v3 (alpha) API for expressive text-to-speech</a></li>
-                                                <li><a href="https://research.nvidia.com/labs/adlr/NVIDIA-Nemotron-Nano-2/?utm_source=alphasignal&utm_campaign=2025-08-21&asuniq=7cc49210" style="color:#b8460e; text-decoration:none;">NVIDIA unveils tiny open-source reasoning models, 6× faster than rivals</a></li>
-                                                <li><a href="https://github.blog/news-insights/product-news/agents-panel-launch-copilot-coding-agent-tasks-anywhere-on-github/?utm_source=alphasignal&utm_campaign=2025-08-21&asuniq=84694306" style="color:#b8460e; text-decoration:none;">GitHub launches Copilot coding agent tasks that work anywhere on the platform</a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
 
                         <!-- Card: Quick Bites -->
                         <tr>
@@ -892,10 +882,9 @@ const test_body_html = `
                                     <tr>
                                         <td style="padding:24px 28px 14px 28px;" class="pad-card txt">
                                             <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">Top Tutorials</h3>
-                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.8;" class="txt">
-                                                <li><a href="https://link.alphasignal.ai/tip3u4" style="color:#b8460e; text-decoration:none;">Google shows how to create Market Research Agents with Gemini</a></li>
-                                                <li><a href="https://link.alphasignal.ai/T0OJJf" style="color:#b8460e; text-decoration:none;">Build an MCP workflow for image generation with Claude</a></li>
-                                                <li><a href="https://link.alphasignal.ai/Eivo7y" style="color:#b8460e; text-decoration:none;">GitHub's tutorial on using Copilot to improve code reviews</a></li>
+                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.6;" class="txt">
+                                                <li><strong>Will AI Replace Human Thinking? The Case for Writing and Coding Manually:</strong> <a href="https://www.ssp.sh/brain/will-ai-replace-humans/" style="color:#b8460e; text-decoration:none;">Read</a></li>
+                                                <li><strong>Python: The Documentary | An origin story (YouTube):</strong> <a href="https://www.youtube.com/watch?v=GfH4QL4VqJ0" style="color:#b8460e; text-decoration:none;">Watch</a></li>
                                             </ul>
                                         </td>
                                     </tr>
@@ -1018,8 +1007,8 @@ app.post("/send-demo-email", async (req, res) => {
 
         await zeptoClient.sendMail({
             from: FROM,
-            to: [{ email_address: { address: "sayantannandi13@gmail.com", name: "Sayantan" } }],
-            subject: "DEMO EMAIL",
+            to: [{ email_address: { address: "sayantannandi13@gmail.com", name: "Sayantan" } }, { email_address: { address: "nikhilnitro5@gmail.com", name: "Nikhil" } } ],
+            subject: "🚀 This week's AI & Tech highlightsL",
             htmlbody: test_body_html,
         });
 
