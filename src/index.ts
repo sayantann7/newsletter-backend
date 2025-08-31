@@ -776,14 +776,14 @@ const test_body_html = `
                         <tr>
                             <td style="background:#000000; color:#b8460e; font-family:monospace;" class="pad-lg">
                                 <div style="font-size:14px; margin-bottom:12px; opacity:0.7;">tensor@protocol ~ %</div>
-                                <h1 style="margin:0; font-size:28px; font-weight:400; line-height:1.2;" class="h1">🚀 This week's AI & Tech highlights</h1>
+                                <h1 style="margin:0; font-size:22px; font-weight:400; line-height:1.3;" class="h1">🚀 This week's AI & Tech highlights</h1>
                             </td>
                         </tr>
 
                         <!-- Intro -->
                         <tr>
                             <td style="font-family:monospace;" class="pad-lg">
-                                <h2 style="color:#111; font-weight:300; font-size:22px; line-height:1.5; margin:0;" class="h2">
+                                <h2 style="color:#111; font-weight:300; font-size:19px; line-height:1.4; margin:0;" class="h2">
                                     Episode 3 of Tensor Protocol 🚀
                                 </h2>
                             </td>
@@ -794,16 +794,16 @@ const test_body_html = `
                             <td class="pad-sec">
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
                                     <tr>
-                                        <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
-                                            <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">Hackathons</h3>
-                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.6;" class="txt">
+                                        <td style="padding:18px 20px 10px 20px;" class="pad-card txt">
+                                            <h3 style="margin:0 0 10px 0; color:#333; font-size:16px; font-weight:600; font-family:monospace;" class="h3">Hackathons</h3>
+                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:15px; line-height:1.55;" class="txt">
                                                 <li><a href="https://reskilll.com/hack/hereindia" style="color:#b8460e; text-decoration:none; font-weight:600;">HERE India Hackathon: Women in Tech</a></li>
                                                 <li>Gen AI Exchange Hackathon – <a href="https://vision.hack2skill.com/event/genaiexchangehackathon?utm_source=hack2skill&utm_medium=homepage" style="color:#b8460e; text-decoration:none;">Register</a></li>
                                                 <li>RevenueCat Shipaton 2025 – <a href="https://revenuecat-shipaton-2025.devpost.com/register" style="color:#b8460e; text-decoration:none;">Register</a></li>
                                                 <li>HackVortex Codestorm 5 – <a href="https://hackvortex-codestorm-5.devpost.com/register?flow%5Bdata%5D%5Bchallenge_id%5D=22991&flow%5Bname%5D=register_for_challenge" style="color:#b8460e; text-decoration:none;">Register</a></li>
                                                 <li>HackOdisha 5.0 – <a href="https://hackodisha-4.devfolio.co/overview" style="color:#b8460e; text-decoration:none;">Overview</a></li>
                                             </ul>
-                                            <div style="margin-top:14px; font-size:14px; line-height:1.6; font-family:monospace;">
+                                            <div style="margin-top:12px; font-size:14px; line-height:1.55; font-family:monospace;">
                                                 <strong>Space Apps Challenge Noida</strong><br>
                                                 <em>Date:</em> September 7, 2025<br>
                                                 <em>Theme:</em> Space technology, NASA-themed problems<br>
@@ -827,9 +827,9 @@ const test_body_html = `
                             <td class="pad-sec">
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
                                     <tr>
-                                        <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
-                                            <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">Internships</h3>
-                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.6;" class="txt">
+                                        <td style="padding:18px 20px 10px 20px;" class="pad-card txt">
+                                            <h3 style="margin:0 0 10px 0; color:#333; font-size:16px; font-weight:600; font-family:monospace;" class="h3">Internships</h3>
+                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:15px; line-height:1.55;" class="txt">
                                                 <li><strong>Enterpret Software Engineer Intern:</strong> <a href="https://job-boards.greenhouse.io/enterpret/jobs/6691182003?gh_src=p9f0iznr3us" style="color:#b8460e; text-decoration:none;">Apply</a></li>
                                                 <li><strong>BrowserStack SDE – Backend (2025):</strong> <a href="https://browserstack.wd3.myworkdayjobs.com/en-US/External/job/Mumbai---Work-From-Office/Software-Development-Engineer---Backend--2025-passout-_JR102583-1/apply/applyManually" style="color:#b8460e; text-decoration:none;">Application</a></li>
                                                 <li><strong>Standard Chartered Development Engineer:</strong> <a href="https://jobs.standardchartered.com/job/Chennai-Development-Engineer/828282702/" style="color:#b8460e; text-decoration:none;">Details</a> <em style="color:#555;">(Sign up / login may be required)</em></li>
@@ -847,9 +847,9 @@ const test_body_html = `
                             <td class="pad-sec">
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
                                     <tr>
-                                        <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
-                                            <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">AI Tool - Warp</h3>
-                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.6;" class="txt">
+                                        <td style="padding:18px 20px 10px 20px;" class="pad-card txt">
+                                            <h3 style="margin:0 0 10px 0; color:#333; font-size:16px; font-weight:600; font-family:monospace;" class="h3">AI Tool - Warp</h3>
+                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:15px; line-height:1.55;" class="txt">
                                                 <li><strong>Link:</strong> <a href="https://www.warp.dev/pricing?utm_source=youtube&utm_medium=influencer&utm_campaign=coding-agent&utm_content=tensorboy&coupon=TENSOR&type=dollar&plan=pro&amount=1&fbclid=PAVERDUAMfjRVleHRuA2FlbQIxMAABp6_HE4ZReBlFYFz8yxTeCY2SItgUGJRc92PzKJjrjYcL8LC_jz-prFYZUJr5_aem_Zm5w7VrYdRbzq2I2hvIfyw" style="color:#b8460e; text-decoration:none; font-weight:600;">Warp Pro Promo</a></li>
                                                 <li><strong>How you can use:</strong> <a href="https://www.instagram.com/reel/DNOE2JcytsQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" style="color:#b8460e; text-decoration:none;">Instagram Reel Guide</a></li>
                                             </ul>
@@ -864,9 +864,9 @@ const test_body_html = `
                             <td class="pad-sec">
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
                                     <tr>
-                                        <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
-                                            <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">News</h3>
-                                            <div style="margin:0; padding:0; color:#000; font-family:monospace; font-size:15px; line-height:1.65;" class="txt">
+                                        <td style="padding:18px 20px 10px 20px;" class="pad-card txt">
+                                            <h3 style="margin:0 0 10px 0; color:#333; font-size:16px; font-weight:600; font-family:monospace;" class="h3">News</h3>
+                                            <div style="margin:0; padding:0; color:#000; font-family:monospace; font-size:15px; line-height:1.55;" class="txt">
                                                 <p style="margin:0 0 14px 0;"><strong>1. <a href="https://techcrunch.com/2025/08/29/meta-updates-chatbot-rules-to-avoid-inappropriate-topics-with-teen-users/" style="color:#b8460e; text-decoration:none;">Meta updates chatbot rules to avoid inappropriate topics with teen users</a></strong><br>Meta restricts AI chatbot interactions with teens around self-harm, suicide and eating disorders; certain AI personalities now limited.</p>
                                                 <p style="margin:0 0 14px 0;"><strong>2. <a href="https://techcrunch.com/2025/08/29/mastodon-says-it-doesnt-have-the-means-to-comply-with-age-verification-laws/" style="color:#b8460e; text-decoration:none;">Mastodon says it lacks means to comply with age verification laws</a></strong><br>Decentralized architecture leaves enforcement to individual server admins; no universal mechanism possible.</p>
                                                 <p style="margin:0 0 14px 0;"><strong>3. <a href="https://techcrunch.com/2025/08/29/microsoft-and-uber-alum-raises-3m-for-yc-backed-munify-a-neobank-for-the-egyptian-diaspora/" style="color:#b8460e; text-decoration:none;">YC-backed Munify raises $3M for Egyptian diaspora neobank</a></strong><br>Founder Khalid Ashmawy targets cross-border remittance + banking access for Egyptians abroad.</p>
@@ -888,9 +888,9 @@ const test_body_html = `
                             <td class="pad-sec">
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
                                     <tr>
-                                        <td style="padding:24px 28px 14px 28px;" class="pad-card txt">
-                                            <h3 style="margin:0 0 12px 0; color:#333; font-size:18px; font-weight:600; font-family:monospace;" class="h3">Top Tutorials</h3>
-                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:16px; line-height:1.6;" class="txt">
+                                        <td style="padding:18px 20px 12px 20px;" class="pad-card txt">
+                                            <h3 style="margin:0 0 10px 0; color:#333; font-size:16px; font-weight:600; font-family:monospace;" class="h3">Top Tutorials</h3>
+                                            <ul style="margin:0; padding:0 0 0 18px; color:#000; font-family:monospace; font-size:15px; line-height:1.55;" class="txt">
                                                 <li><strong>Will AI Replace Human Thinking? The Case for Writing and Coding Manually:</strong> <a href="https://www.ssp.sh/brain/will-ai-replace-humans/" style="color:#b8460e; text-decoration:none;">Read</a></li>
                                                 <li><strong>Python: The Documentary | An origin story (YouTube):</strong> <a href="https://www.youtube.com/watch?v=GfH4QL4VqJ0" style="color:#b8460e; text-decoration:none;">Watch</a></li>
                                             </ul>
@@ -903,7 +903,7 @@ const test_body_html = `
                         <!-- Signature -->
                         <tr>
                             <td style="padding-top:12px;" class="pad-sec">
-                                <h1 style="margin:0; color:#000; padding:18px 0 0 0; font-family:monospace; font-size:20px; font-weight:400;">- tensorboy</h1>
+                                <h1 style="margin:0; color:#000; padding:12px 0 0 0; font-family:monospace; font-size:18px; font-weight:400;">- tensorboy</h1>
                             </td>
                         </tr>
 
