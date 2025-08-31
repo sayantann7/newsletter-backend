@@ -974,7 +974,7 @@ app.post("/send-demo-email", async (req, res) => {
         await zeptoClient.sendMail({
             from: FROM,
             to: [{ email_address: { address: "sayantannandi13@gmail.com", name: "Sayantan" } }, { email_address: { address: "nikhilnitro5@gmail.com", name: "Nikhil" } } ],
-            subject: "🚀 This week's AI & Tech highlightsL",
+            subject: "🚀 This week's AI & Tech highlights - DEMO",
             htmlbody: test_body_html,
         });
 
