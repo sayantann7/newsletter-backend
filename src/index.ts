@@ -737,37 +737,31 @@ const test_body_html = `
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <style type="text/css">
-            /* Improve text scaling consistency */
+            /* Mobile-first baseline (Gmail safe). Larger screens enhanced via min-width queries. */
             body, table, td { -webkit-text-size-adjust: 100%; }
-            /* Mobile tweaks */
-            @media only screen and (max-width: 600px) {
-                .wr { padding: 12px !important; }
-                .ct { max-width: 100% !important; width: 100% !important; border-radius: 0 !important; }
-                .pad-lg { padding: 20px !important; }
-                .pad-sec { padding: 12px 16px 10px 16px !important; }
-                .pad-card { padding: 16px !important; }
-                .h1 { font-size: 22px !important; line-height: 1.3 !important; }
-                .h2 { font-size: 18px !important; line-height: 1.4 !important; }
-                .h3 { font-size: 16px !important; }
-                .txt { font-size: 15px !important; line-height: 1.7 !important; }
-                a { word-break: break-word !important; }
-                ul { padding-left: 18px !important; }
-                td, p, li { word-break: break-word !important; }
+            .h1 { font-size:24px; line-height:1.3; }
+            .h2 { font-size:19px; line-height:1.4; }
+            .h3 { font-size:16px; }
+            .txt, .txt li { font-size:15px; line-height:1.55; }
+            .pad-lg { padding:24px 20px 20px 20px; }
+            .pad-sec { padding:16px 20px 12px 20px; }
+            .pad-card { padding:20px 20px 12px 20px; }
+            a { word-break:break-word; }
+            td, p, li { word-break:break-word; }
+            table.ct { width:100%!important; max-width:100%!important; }
+            /* Desktop / larger screens */
+            @media only screen and (min-width:600px) {
+                .ct { max-width:840px !important; }
+                .pad-lg { padding:36px 36px 28px 36px !important; }
+                .pad-sec { padding:20px 36px 12px 36px !important; }
+                .pad-card { padding:24px 28px 14px 28px !important; }
+                .h1 { font-size:28px !important; }
+                .h2 { font-size:22px !important; }
+                .h3 { font-size:18px !important; }
+                .txt, .txt li { font-size:16px !important; line-height:1.7 !important; }
             }
-            /* Extra-small phones refinements */
-            @media only screen and (max-width: 480px) {
-                .pad-lg { padding: 22px 18px 18px 18px !important; }
-                .pad-sec { padding: 14px 18px 10px 18px !important; }
-                .pad-card { padding: 18px 18px 12px 18px !important; }
-                .h1 { font-size: 23px !important; }
-                .h2 { font-size: 19px !important; }
-                .h3 { font-size: 16px !important; }
-                .txt, .txt li { font-size: 15px !important; line-height: 1.55 !important; }
-                table.ct { box-shadow: none !important; }
-            }
-            /* Slightly wider body on desktops to use space */
-            @media only screen and (min-width: 1024px) {
-                .ct { max-width: 1000px !important; }
+            @media only screen and (min-width:1024px) {
+                .ct { max-width:1000px !important; }
             }
         </style>
     </head>
@@ -775,12 +769,12 @@ const test_body_html = `
         <!-- Wrapper -->
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f6f8fb;">
             <tr>
-        <td align="center" style="padding:32px;" class="wr">
+    <td align="center" style="padding:24px;" class="wr">
                     <!-- Container -->
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ct" style="max-width:840px; width:100%; background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="ct" style="background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,0.04);">
                         <!-- Header -->
                         <tr>
-                            <td style="background:#000000; color:#b8460e; padding:36px 36px 28px 36px; font-family:monospace;" class="pad-lg">
+                            <td style="background:#000000; color:#b8460e; font-family:monospace;" class="pad-lg">
                                 <div style="font-size:14px; margin-bottom:12px; opacity:0.7;">tensor@protocol ~ %</div>
                                 <h1 style="margin:0; font-size:28px; font-weight:400; line-height:1.2;" class="h1">🚀 This week's AI & Tech highlights</h1>
                             </td>
@@ -788,7 +782,7 @@ const test_body_html = `
 
                         <!-- Intro -->
                         <tr>
-                            <td style="padding:36px; font-family:monospace;" class="pad-lg">
+                            <td style="font-family:monospace;" class="pad-lg">
                                 <h2 style="color:#111; font-weight:300; font-size:22px; line-height:1.5; margin:0;" class="h2">
                                     Episode 3 of Tensor Protocol 🚀
                                 </h2>
@@ -797,7 +791,7 @@ const test_body_html = `
 
                         <!-- Card: Top AI News -->
                         <tr>
-                            <td style="padding:0 36px 12px 36px;" class="pad-sec">
+                            <td class="pad-sec">
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
                                     <tr>
                                         <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
@@ -830,7 +824,7 @@ const test_body_html = `
 
                         <!-- Card: Trending Signals -->
                         <tr>
-                            <td style="padding:20px 36px 12px 36px;" class="pad-sec">
+                            <td class="pad-sec">
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
                                     <tr>
                                         <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
@@ -850,7 +844,7 @@ const test_body_html = `
 
                         <!-- Card: Career Spotlight -->
                         <tr>
-                            <td style="padding:20px 36px 12px 36px;" class="pad-sec">
+                            <td class="pad-sec">
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
                                     <tr>
                                         <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
@@ -867,7 +861,7 @@ const test_body_html = `
 
                         <!-- Card: Tutorials of the Week -->
                         <tr>
-                            <td style="padding:20px 36px 12px 36px;" class="pad-sec">
+                            <td class="pad-sec">
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
                                     <tr>
                                         <td style="padding:24px 28px 12px 28px;" class="pad-card txt">
@@ -891,7 +885,7 @@ const test_body_html = `
 
                         <!-- Card: Quick Bites -->
                         <tr>
-                            <td style="padding:20px 36px 12px 36px;" class="pad-sec">
+                            <td class="pad-sec">
                                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eceff3; border-radius:10px;">
                                     <tr>
                                         <td style="padding:24px 28px 14px 28px;" class="pad-card txt">
@@ -908,14 +902,14 @@ const test_body_html = `
 
                         <!-- Signature -->
                         <tr>
-                            <td style="padding:12px 36px 0 36px;" class="pad-sec">
+                            <td style="padding-top:12px;" class="pad-sec">
                                 <h1 style="margin:0; color:#000; padding:18px 0 0 0; font-family:monospace; font-size:20px; font-weight:400;">- tensorboy</h1>
                             </td>
                         </tr>
 
                         <!-- Footer -->
                         <tr>
-                            <td style="padding:14px 36px 36px 36px;" class="pad-sec">
+                            <td style="padding:14px 0 36px 0;" class="pad-sec">
                                 <div style="margin-top:12px; font-family:monospace; font-size:14px; color:#666;">
                                     Connect with us:
                                     <a href="https://www.linkedin.com/in/--manav-gupta--/" style="color:#b8460e; text-decoration:none; margin:0 8px;">LinkedIn</a>|
