@@ -733,308 +733,140 @@ const test_body_html = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Smart India Hackathon Masterclass</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Reminder: Smart India Hackathon Masterclass — 24 hours left</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            line-height: 1.6; color: #333; background-color: #f8f9fa;
         }
-        
         .email-container {
-            max-width: 600px;
-            margin: 20px auto;
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px; margin: 20px auto; background: #ffffff;
+            border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
-        
         .header {
-            background: linear-gradient(135deg, #ff964f 0%, #d35501 100%);
-            padding: 40px 30px;
-            text-align: center;
-            color: white;
-            font-weight: bold;
+            background: linear-gradient(135deg,#ff964f 0%,#d35501 100%);
+            padding: 36px 28px; text-align: center; color: #fff; font-weight: 700;
         }
-        
-        .header h1 {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-        
-        .header .subtitle {
-            font-size: 16px;
-            opacity: 0.98;
-            font-weight: 300;
-        }
-        
+        .header h1 { font-size: 28px; margin-bottom: 6px; letter-spacing: -0.4px; }
+        .subtitle { font-size: 15px; opacity: 0.95; font-weight: 400; }
         .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            margin-top: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: inline-block; background: rgba(255,255,255,0.18);
+            padding: 8px 18px; border-radius: 20px; font-size: 13px; font-weight: 700;
+            margin-top: 12px; border: 1px solid rgba(255,255,255,0.25);
         }
-        
-        .content {
-            padding: 40px 30px;
-        }
-        
-        .greeting {
-            font-size: 18px;
-            font-weight: 600;
-            color: #222;
-            margin-bottom: 20px;
-        }
-        
-        .main-text {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 25px;
-            line-height: 1.7;
-        }
-        
-        .highlight-box {
-            background: #f8f9fa;
+        .content { padding: 34px 30px; }
+        .greeting { font-size: 18px; font-weight: 600; color: #222; margin-bottom: 14px; }
+        .main-text { font-size: 15px; color: #444; margin-bottom: 18px; line-height: 1.7; }
+        .urgency {
+            background: #fff7f3;
             border-left: 4px solid #ff6b35;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 0 8px 8px 0;
+            padding: 18px; border-radius: 6px; margin: 18px 0;
         }
-        
-        .highlight-text {
-            font-size: 16px;
-            color: #333;
-            font-weight: 500;
-        }
-        
+        .urgency p { margin: 0; font-weight: 600; color: #2a2a2a; }
         .details-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 30px 0;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0;
         }
-        
         .detail-item {
-            text-align: center;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
+            text-align: center; padding: 14px; background: #f7fafc; border-radius: 8px;
         }
-        
-        .detail-icon {
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
-        
-        .detail-label {
-            font-size: 12px;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-        }
-        
-        .detail-value {
-            font-size: 16px;
-            font-weight: 600;
-            color: #222;
-        }
-        
-        .cta-section {
-            text-align: center;
-            margin: 40px 0 30px 0;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #331509 0%, #000000 100%);
-            color: white;
-            text-decoration: none;
-            padding: 16px 40px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-        }
-        
-        .benefits {
-            margin: 30px 0;
-        }
-        
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 15px;
-            color: #555;
-        }
-        
+        .detail-icon { font-size: 20px; margin-bottom: 6px; }
+        .detail-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+        .detail-value { font-size: 15px; font-weight: 700; color: #222; }
+        .benefits { margin: 18px 0 8px 0; }
+        .benefit-item { display:flex; align-items:center; margin-bottom:10px; color:#555; font-size:14px; }
         .benefit-icon {
-            width: 20px;
-            height: 20px;
-            background: #ff6b35;
-            border-radius: 50%;
-            margin-right: 15px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 12px;
+            width:20px; height:20px; background:#ff6b35; border-radius:50%;
+            display:flex; align-items:center; justify-content:center; color:white; font-size:12px; margin-right:12px;
         }
-        
-        .footer {
-            background: #222;
-            color: #ccc;
-            padding: 30px;
-            text-align: center;
-            font-size: 14px;
+        .cta-section { text-align:center; margin:26px 0; }
+        .cta-button {
+            display:inline-block; text-decoration:none; padding:14px 38px; border-radius:40px;
+            font-weight:700; font-size:15px; color:white; text-transform:uppercase; letter-spacing:0.6px;
+            background:linear-gradient(135deg,#331509 0%,#000000 100%); color:#fff;
+            box-shadow:0 6px 18px rgba(0,0,0,0.18);
         }
-        
-        .footer .signature {
-            color: #ff6b35;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .social-note {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #888;
-            font-style: italic;
-        }
-        
-        @media (max-width: 600px) {
-            .email-container {
-                margin: 10px;
-                border-radius: 8px;
-            }
-            
-            .header {
-                padding: 30px 20px;
-            }
-            
-            .header h1 {
-                font-size: 50px;
-            }
-            
-            .content {
-                padding: 30px 20px;
-            }
-            
-            .details-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .cta-button {
-                padding: 14px 30px;
-                font-size: 15px;
-            }
+        .footer { background:#222; color:#ccc; padding:24px; text-align:center; font-size:13px; }
+        .signature { color:#ff6b35; font-weight:700; margin-bottom:6px; }
+        .note { margin-top:10px; font-size:13px; color:#aaa; }
+        @media (max-width:600px){
+            .email-container { margin:10px; border-radius:8px; }
+            .content { padding:20px; }
+            .details-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 26px; }
         }
     </style>
 </head>
 <body>
     <div class="email-container">
-        <!-- Header Section -->
+        <!-- Header -->
         <div class="header">
-            <h1 style="font-size: 36px;">Smart India Hackathon</h1>
-            <div class="subtitle">Masterclass with Former SIH Judge</div>
-            <div class="badge">FREE SESSION</div>
+            <h1>Smart India Hackathon</h1>
+            <div class="subtitle">Masterclass with Former SIH Judge — reminder</div>
+            <div class="badge">24 HOURS LEFT</div>
         </div>
-        
-        <!-- Content Section -->
+
+        <!-- Body -->
         <div class="content">
-            <div class="greeting">Hey there! 👋</div>
-            
+            <div class="greeting">Quick reminder!</div>
+
             <div class="main-text">
-                Hope you're doing amazing! I've been getting tons of messages about Smart India Hackathon guidance lately, and while I can't reply to everyone personally, I wanted to do something special for all of you.
+                This is a friendly reminder that the <strong>Smart India Hackathon Masterclass</strong> goes live in less than <strong>24 hours</strong>.
+                We’ll be covering judge-grade tactics, evaluation insights, and the practical checklist winning teams use.
             </div>
-            
-            <div class="highlight-box">
-                <div class="highlight-text">
-                    As a former SIH judge, I know exactly what separates winning teams from the rest, and I want to share those insights with you.
-                </div>
+
+            <div class="urgency">
+                <p>Starts: <strong>Sunday, 21st September, 9:00 PM IST</strong> (60 minutes)</p>
             </div>
-            
-            <!-- Event Details -->
-            <div class="details-grid">
+
+            <div class="details-grid" aria-hidden="true">
                 <div class="detail-item">
                     <div class="detail-icon">📅</div>
                     <div class="detail-label">Date</div>
-                    <div class="detail-value">Sunday, 21st</div>
+                    <div class="detail-value">21 Sep 2025</div>
                 </div>
                 <div class="detail-item">
                     <div class="detail-icon">🕘</div>
                     <div class="detail-label">Time</div>
-                    <div class="detail-value">9:00 PM</div>
+                    <div class="detail-value">9:00 PM IST</div>
                 </div>
             </div>
-            
-            <!-- Benefits -->
+
             <div class="benefits">
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div>60 minutes of actionable SIH strategies</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div>Insights from a former SIH judge</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div>Completely FREE for everyone</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div>Perfect for teams & individuals</div>
-                </div>
+                <div class="benefit-item"><div class="benefit-icon">✓</div><div>Actionable judge-level feedback</div></div>
+                <div class="benefit-item"><div class="benefit-icon">✓</div><div>How to structure your submission for success</div></div>
+                <div class="benefit-item"><div class="benefit-icon">✓</div><div>Perfect for teams & solo participants</div></div>
             </div>
-            
-            <div class="main-text">
-                Bring your team, share with your college friends - everyone's welcome!
+
+            <div class="main-text" style="margin-top:8px;">
+                This email is a reminder. No registration is required if you've already signed up. If you'd like a calendar event added to your Google Calendar, click the button below to set a reminder and save the event instantly.
             </div>
-            
-            <!-- Call to Action -->
+
+            <!-- CTA: Google Calendar prefilled event (1 hour duration) -->
             <div class="cta-section">
-                <a href="https://forms.gle/3e6i73i6nKaE1ho46" class="cta-button" target="_blank" rel="noopener" style="background-color: #000000;">
-                    🎯 REGISTER NOW
+                <a
+                    class="cta-button"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://www.google.com/calendar/render?action=TEMPLATE&text=Smart+India+Hackathon+Masterclass+by+Tensorboy&dates=20250921T153000Z/20250921T163000Z&details=Join+the+free+Smart+India+Hackathon+Masterclass+with+a+former+SIH+judge.+Duration:+60+minutes.&location=Online"
+                >
+                    ⏰ Set Reminder
                 </a>
             </div>
-            
-            <div class="social-note">
-                Share this with your friends and teammates - let's build something amazing together!
+
+            <div class="main-text" style="font-size:13px; color:#666;">
+                Tip: Google Calendar will open in a new tab and allow you to save the event to any calendar linked to your Google account.
             </div>
         </div>
-        
+
         <!-- Footer -->
         <div class="footer">
             <div class="signature">- Tensorboy ❤️</div>
-            <div>Looking forward to seeing you there!</div>
+            <div>See you at the Masterclass — one day to go.</div>
+            <div class="note">If you need to update the event time for another timezone, please adjust within Google Calendar after adding the event.</div>
         </div>
     </div>
 </body>
