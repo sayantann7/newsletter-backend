@@ -735,153 +735,308 @@ const test_body_html = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tensor Protocol</title>
+    <title>Free Smart India Hackathon Masterclass</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff964f 0%, #d35501 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        
+        .header .subtitle {
+            font-size: 16px;
+            opacity: 0.98;
+            font-weight: 300;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .greeting {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 20px;
+        }
+        
+        .main-text {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #ff6b35;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-text {
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .detail-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .detail-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .detail-label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        
+        .detail-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 40px 0 30px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #331509 0%, #000000 100%);
+            color: white;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .benefits {
+            margin: 30px 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #555;
+        }
+        
+        .benefit-icon {
+            width: 20px;
+            height: 20px;
+            background: #ff6b35;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+        
+        .footer {
+            background: #222;
+            color: #ccc;
+            padding: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer .signature {
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .social-note {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #888;
+            font-style: italic;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 50px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f7fafc; font-family: monospace;">
-    <table align="center" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%; border-collapse: collapse; background-color: #f7fafc;">
-        <tr>
-            <td align="center">
-                <table align="center" cellpadding="0" cellspacing="0" role="presentation" style="width: 600px; border-collapse: collapse; background-color: #ffffff;">
-                    <tr>
-                        <td style="padding: 15px; color: #b8460e; background-color: #000000;">
-                            <p style="margin: 0; line-height: 27px; font-size: 18px;"><b>tensor@protocol ~ %</b></p>
-                            <p style="margin: 15px 0 0 0; line-height: 24px; font-size: 22px; font-weight: bold;">🚀 Episode 3 of Tensor Protocol</p>
-                            <p style="margin: 10px 0 0 0; line-height: 24px; font-size: 16px; font-weight: bold;">This week's AI & Tech highlights</p>
-                        </td>
-                    </tr>
-
-                    <tr><td style="height: 20px;"></td></tr>
-
-                    <tr>
-                        <td style="padding: 0 20px;">
-                            <h3 style="margin: 0; line-height: 18px; font-size: 15px; font-weight: bold; color: #000000;">NEWS</h3>
-                            <div style="border-bottom: 1px solid #000000; margin-top: 10px;"></div>
-                        </td>
-                    </tr>
-                    <tr><td style="height: 15px;"></td></tr>
-                    <tr>
-                        <td style="padding: 0 20px;">
-                            <h2 style="margin: 0; line-height: 20.4px; font-size: 17px; font-weight: bold;"><a href="https://techcrunch.com/2025/08/29/meta-updates-chatbot-rules-to-avoid-inappropriate-topics-with-teen-users/" style="text-decoration: none; color: #b8460e;">1. Meta updates chatbot rules to avoid inappropriate topics with teen users</a></h2>
-                            <p style="margin: 5px 0 0 0; line-height: 22.5px; color: #000000; font-size: 15px;">Coverage: After reports of Meta’s AI chatbots having inappropriate conversations with minors, Meta is restricting its bots from engaging with teens about self-harm, suicide, eating disorders, and limiting certain AI personalities.</p>
-                        </td>
-                    </tr>
-                    <tr><td><div style="margin: 15px auto; width: 95%; border-top: 1px solid #cccccc;"></div></td></tr>
-                    <tr>
-                        <td style="padding: 0 20px;">
-                            <h2 style="margin: 0; line-height: 20.4px; font-size: 17px; font-weight: bold;"><a href="https://techcrunch.com/2025/08/29/mastodon-says-it-doesnt-have-the-means-to-comply-with-age-verification-laws/" style="text-decoration: none; color: #b8460e;">2. Mastodon says it doesn't 'have the means' to comply with age verification laws</a></h2>
-                            <p style="margin: 5px 0 0 0; line-height: 22.5px; color: #000000; font-size: 15px;">Coverage: Mastodon’s decentralized network says it cannot enforce age verification for users; individual server owners must decide how to handle such laws.</p>
-                        </td>
-                    </tr>
-                    <tr><td><div style="margin: 15px auto; width: 95%; border-top: 1px solid #cccccc;"></div></td></tr>
-                    <tr>
-                        <td style="padding: 0 20px;">
-                            <h2 style="margin: 0; line-height: 20.4px; font-size: 17px; font-weight: bold;"><a href="https://techcrunch.com/2025/08/29/microsoft-and-uber-alum-raises-3m-for-yc-backed-munify-a-neobank-for-the-egyptian-diaspora/" style="text-decoration: none; color: #b8460e;">3. Microsoft and Uber alum raises $3M for YC-backed Munify, a neobank for the Egyptian diaspora</a></h2>
-                            <p style="margin: 5px 0 0 0; line-height: 22.5px; color: #000000; font-size: 15px;">Coverage: Khalid Ashmawy launched Munify to help Egyptians abroad send money home and offer cross-border banking.</p>
-                        </td>
-                    </tr>
-                    <tr><td><div style="margin: 15px auto; width: 95%; border-top: 1px solid #cccccc;"></div></td></tr>
-                    <tr>
-                        <td style="padding: 0 20px;">
-                            <h2 style="margin: 0; line-height: 20.4px; font-size: 17px; font-weight: bold;"><a href="https://techcrunch.com/2025/08/29/whatsapp-fixes-zero-click-bug-used-to-hack-apple-users-with-spyware/" style="text-decoration: none; color: #b8460e;">4. WhatsApp fixes 'zero-click' bug used to hack Apple users with spyware</a></h2>
-                            <p style="margin: 5px 0 0 0; line-height: 22.5px; color: #000000; font-size: 15px;">Coverage: WhatsApp patched a critical vulnerability that allowed targeted attacks (“zero-click” spyware) against iPhone and Mac users.</p>
-                        </td>
-                    </tr>
-                    <tr><td><div style="margin: 15px auto; width: 95%; border-top: 1px solid #cccccc;"></div></td></tr>
-                    <tr>
-                        <td style="padding: 0 20px;">
-                            <h2 style="margin: 0; line-height: 20.4px; font-size: 17px; font-weight: bold;"><a href="https://finance.yahoo.com/news/billionaire-ambani-taps-google-meta-131910370.html" style="text-decoration: none; color: #b8460e;">5. Billionaire Ambani taps Google, Meta to build India's AI backbone</a></h2>
-                            <p style="margin: 5px 0 0 0; line-height: 22.5px; color: #000000; font-size: 15px;">Coverage: Reliance announced a new AI subsidiary and partnerships with Google, Meta, and possibly OpenAI to drive India’s AI infrastructure.</p>
-                        </td>
-                    </tr>
-                    <tr><td><div style="margin: 15px auto; width: 95%; border-top: 1px solid #cccccc;"></div></td></tr>
-                    <tr>
-                        <td style="padding: 0 20px;">
-                            <h2 style="margin: 0; line-height: 20.4px; font-size: 17px; font-weight: bold;"><a href="https://www.bbc.com/news/articles/ckgdjx0vgn3o" style="text-decoration: none; color: #b8460e;">6. Tesla challenges $243 million verdict in Autopilot death trial</a></h2>
-                            <p style="margin: 5px 0 0 0; line-height: 22.5px; color: #000000; font-size: 15px;">Coverage: Tesla is appealing a $243M verdict over a fatal Autopilot-related crash, seeking to overturn or reduce the damages.</p>
-                        </td>
-                    </tr>
-                    <tr><td><div style="margin: 15px auto; width: 95%; border-top: 1px solid #cccccc;"></div></td></tr>
-                    <tr>
-                        <td style="padding: 0 20px;">
-                            <h2 style="margin: 0; line-height: 20.4px; font-size: 17px; font-weight: bold;"><a href="https://techcrunch.com/2025/08/15/tech-layoffs-2025-list/" style="text-decoration: none; color: #b8460e;">7. A comprehensive list of 2025 tech layoffs</a></h2>
-                            <p style="margin: 5px 0 0 0; line-height: 22.5px; color: #000000; font-size: 15px;">Coverage: Continuously updated tracker of all the major layoffs in tech, from startups to giants, in 2025.</p>
-                        </td>
-                    </tr>
-                    <tr><td><div style="margin: 15px auto; width: 95%; border-top: 1px solid #cccccc;"></div></td></tr>
-                    <tr>
-                        <td style="padding: 0 20px 20px 20px;">
-                            <h2 style="margin: 0; line-height: 20.4px; font-size: 17px; font-weight: bold;"><a href="https://techcrunch.com/2024/12/26/the-fall-of-ev-startup-fisker-a-comprehensive-timeline/" style="text-decoration: none; color: #b8460e;">8. Henrik Fisker quietly wound down his nonprofit after his EV startup went bankrupt</a></h2>
-                            <p style="margin: 5px 0 0 0; line-height: 22.5px; color: #000000; font-size: 15px;">Coverage: Details Fisker’s decline, bankruptcy, and the winding down of related nonprofit activity.</p>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td style="padding: 15px 20px 0 20px;">
-                            <h3 style="margin: 0; line-height: 18px; font-size: 15px; font-weight: bold; color: #000000;">HACKATHONS</h3>
-                            <div style="border-bottom: 1px solid #000000; margin-top: 10px;"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 15px 20px;">
-                            <p style="margin: 0 0 15px 0; line-height: 22.5px; font-size: 15px;"><a href="https://reskilll.com/hack/hereindia" style="text-decoration: none; color: #b8460e; font-weight: bold;">HERE India Hackathon: Women in Tech</a></p>
-                            <p style="margin: 0 0 15px 0; line-height: 22.5px; font-size: 15px;"><a href="https://vision.hack2skill.com/event/genaiexchangehackathon?utm_source=hack2skill&utm_medium=homepage" style="text-decoration: none; color: #b8460e; font-weight: bold;">Gen AI Exchange Hackathon</a></p>
-                            <p style="margin: 0 0 15px 0; line-height: 22.5px; font-size: 15px;"><a href="https://revenuecat-shipaton-2025.devpost.com/register" style="text-decoration: none; color: #b8460e; font-weight: bold;">RevenueCat Shipaton 2025</a></p>
-                            <p style="margin: 0 0 15px 0; line-height: 22.5px; font-size: 15px;"><a href="https://hackvortex-codestorm-5.devpost.com/register?flow[data][challenge_id]=22991&flow[name]=register_for_challenge" style="text-decoration: none; color: #b8460e; font-weight: bold;">HackVortex Codestorm 5</a></p>
-                            <p style="margin: 0 0 15px 0; line-height: 22.5px; font-size: 15px;"><a href="https://hackodisha-4.devfolio.co/overview" style="text-decoration: none; color: #b8460e; font-weight: bold;">HackOdisha 5.0</a></p>
-                            <p style="margin: 0 0 15px 0; line-height: 22.5px; font-size: 15px;"><a href="https://thenewviews.com/upcoming-hackathons-in-india/" style="text-decoration: none; color: #b8460e; font-weight: bold;">Space Apps Challenge Noida</a></p>
-                            <p style="margin: 0; line-height: 22.5px; font-size: 15px;"><a href="https://thenewviews.com/upcoming-hackathons-in-india/" style="text-decoration: none; color: #b8460e; font-weight: bold;">India Open Hackathon</a></p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="padding: 15px 20px 0 20px;">
-                            <h3 style="margin: 0; line-height: 18px; font-size: 15px; font-weight: bold; color: #000000;">AI TOOL - WRAP</h3>
-                            <div style="border-bottom: 1px solid #000000; margin-top: 10px;"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 15px 20px;">
-                            <p style="margin: 0; line-height: 22.5px; color: #000000; font-size: 15px;">A blazingly fast, Rust-based terminal that's reimagined from the ground up to work like a modern app, with AI command search and workflows.</p>
-                            <p style="margin: 10px 0; line-height: 22.5px; color: #000000; font-size: 15px;"><b>Link:</b> <a href="https://www.warp.dev/pricing?utm_source=youtube&utm_medium=influencer&utm_campaign=coding-agent&utm_content=tensorboy&coupon=TENSOR&type=dollar&plan=pro&amount=1&fbclid=PAVERDUAMfjRVleHRuA2FlbQIxMAABp6_HE4ZReBlFYFz8yxTeCY2SItgUGJRc92PzKJjrjYcL8LC_jz-prFYZUJr5_aem_Zm5w7VrYdRbzq2I2hvIfyw" style="color: #b8460e;">https://www.warp.dev/</a></p>
-                            <p style="margin: 0; line-height: 22.5px; color: #000000; font-size: 15px;"><b>How to use:</b> <a href="https://www.instagram.com/reel/DNiyjxMSZ3C/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" style="color: #b8460e;">Watch Reel</a></p>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td style="padding: 15px 20px 0 20px;">
-                            <h3 style="margin: 0; line-height: 18px; font-size: 15px; font-weight: bold; color: #000000;">TOP TUTORIALS</h3>
-                            <div style="border-bottom: 1px solid #000000; margin-top: 10px;"></div>
-                        </td>
-                    </tr>
-                    <tr><td style="height: 15px;"></td></tr>
-                    <tr>
-                        <td style="padding: 0 20px;">
-                             <h2 style="margin: 0; line-height: 20.4px; font-size: 17px; font-weight: bold;"><a href="https://www.ssp.sh/brain/will-ai-replace-humans/" style="text-decoration: none; color: #b8460e;">Will AI Replace Human Thinking? The Case for Writing and Coding Manually</a></h2>
-                        </td>
-                    </tr>
-                     <tr><td><div style="margin: 15px auto; width: 95%; border-top: 1px solid #cccccc;"></div></td></tr>
-                    <tr>
-                        <td style="padding: 0 20px;">
-                             <h2 style="margin: 0; line-height: 20.4px; font-size: 17px; font-weight: bold;"><a href="https://www.youtube.com/watch?v=GfH4QL4VqJ0" style="text-decoration: none; color: #b8460e;">The free Python documentary 'Python: The Documentary | An origin story' is now available on YouTube</a></h2>
-                        </td>
-                    </tr>
-                    <tr><td style="height: 20px;"></td></tr>
-
-                    <tr>
-                        <td align="center" style="padding: 15px; border: 1px solid #000000; font-family: roboto, 'helvetica neue', helvetica, arial, sans-serif;">
-                            <p style="margin: 0; line-height: 24px; color: #000000; font-size: 16px;"><strong>- tensorboy&nbsp;</strong></p>
-                            <p style="margin: 5px 0 0 0; line-height: 24px; color: #000000; font-size: 16px;">Connect with me:
-                                <a href="https://www.linkedin.com/in/--manav-gupta--/" style="color: #b8460e; text-decoration: none; margin: 0 8px;">LinkedIn</a>|
-                                <a href="mailto:manav.tensorboy@gmail.com" style="color: #b8460e; text-decoration: none; margin: 0 8px;">Email</a>|
-                                <a href="https://instagram.com/tensor._.boy" style="color: #b8460e; text-decoration: none; margin: 0 8px;">Instagram</a>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr><td style="height: 20px;"></td></tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+<body>
+    <div class="email-container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1 style="font-size: 36px;">Smart India Hackathon</h1>
+            <div class="subtitle">Masterclass with Former SIH Judge</div>
+            <div class="badge">FREE SESSION</div>
+        </div>
+        
+        <!-- Content Section -->
+        <div class="content">
+            <div class="greeting">Hey there! 👋</div>
+            
+            <div class="main-text">
+                Hope you're doing amazing! I've been getting tons of messages about Smart India Hackathon guidance lately, and while I can't reply to everyone personally, I wanted to do something special for all of you.
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-text">
+                    As a former SIH judge, I know exactly what separates winning teams from the rest, and I want to share those insights with you.
+                </div>
+            </div>
+            
+            <!-- Event Details -->
+            <div class="details-grid">
+                <div class="detail-item">
+                    <div class="detail-icon">📅</div>
+                    <div class="detail-label">Date</div>
+                    <div class="detail-value">Sunday, 21st</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">🕘</div>
+                    <div class="detail-label">Time</div>
+                    <div class="detail-value">9:00 PM</div>
+                </div>
+            </div>
+            
+            <!-- Benefits -->
+            <div class="benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>60 minutes of actionable SIH strategies</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>Insights from a former SIH judge</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>Completely FREE for everyone</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>Perfect for teams & individuals</div>
+                </div>
+            </div>
+            
+            <div class="main-text">
+                Bring your team, share with your college friends - everyone's welcome!
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <a href="https://forms.gle/3e6i73i6nKaE1ho46" class="cta-button" target="_blank" rel="noopener" style="background-color: #000000;">
+                    🎯 REGISTER NOW
+                </a>
+            </div>
+            
+            <div class="social-note">
+                Share this with your friends and teammates - let's build something amazing together!
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="signature">- Tensorboy ❤️</div>
+            <div>Looking forward to seeing you there!</div>
+        </div>
+    </div>
 </body>
 </html>
 `;
@@ -973,8 +1128,8 @@ app.post("/send-demo-email", async (req, res) => {
 
         await zeptoClient.sendMail({
             from: FROM,
-            to: [{ email_address: { address: "sayantannandi13@gmail.com", name: "Sayantan" } }, { email_address: { address: "nikhilnitro5@gmail.com", name: "Nikhil" } } ],
-            subject: "🚀 This week's AI & Tech highlights - DEMO",
+            to: [{ email_address: { address: "manav.gupta1613@gmail.com", name: "Manav" } }, { address: "sayantannandi13@gmail.com", name: "Sayantan" } }, { email_address: { address: "nikhilnitro5@gmail.com", name: "Nikhil" } } ],
+            subject: "Free Smart India Hackathon Masterclass - Sunday 9 PM ❤",
             htmlbody: test_body_html,
         });
 
