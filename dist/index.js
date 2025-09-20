@@ -23,6 +23,10 @@ const zeptomail_1 = require("zeptomail");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
+app.use((req, res, next) => {
+    res.setHeader("Content-Security-Policy", "default-src 'self'; connect-src 'self' https://api.tensorboy.com;");
+    next();
+});
 const resend = new resend_1.Resend(process.env.RESEND_API_KEY);
 // Updated Prisma client instantiation for serverless environment
 let prisma;
@@ -664,13 +668,336 @@ const HTML_BODY = `<div class="variant">
     </div>
 </div>
 `;
+const test_body_html = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Smart India Hackathon Masterclass</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff964f 0%, #d35501 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        
+        .header .subtitle {
+            font-size: 16px;
+            opacity: 0.98;
+            font-weight: 300;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .greeting {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 20px;
+        }
+        
+        .main-text {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #ff6b35;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-text {
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .detail-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .detail-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .detail-label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        
+        .detail-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 40px 0 30px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #331509 0%, #000000 100%);
+            color: white;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .benefits {
+            margin: 30px 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #555;
+        }
+        
+        .benefit-icon {
+            width: 20px;
+            height: 20px;
+            background: #ff6b35;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+        
+        .footer {
+            background: #222;
+            color: #ccc;
+            padding: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer .signature {
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .social-note {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #888;
+            font-style: italic;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 50px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1 style="font-size: 36px;">Smart India Hackathon</h1>
+            <div class="subtitle">Masterclass with Former SIH Judge</div>
+            <div class="badge">FREE SESSION</div>
+        </div>
+        
+        <!-- Content Section -->
+        <div class="content">
+            <div class="greeting">Hey there! 👋</div>
+            
+            <div class="main-text">
+                Hope you're doing amazing! I've been getting tons of messages about Smart India Hackathon guidance lately, and while I can't reply to everyone personally, I wanted to do something special for all of you.
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-text">
+                    As a former SIH judge, I know exactly what separates winning teams from the rest, and I want to share those insights with you.
+                </div>
+            </div>
+            
+            <!-- Event Details -->
+            <div class="details-grid">
+                <div class="detail-item">
+                    <div class="detail-icon">📅</div>
+                    <div class="detail-label">Date</div>
+                    <div class="detail-value">Sunday, 21st</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">🕘</div>
+                    <div class="detail-label">Time</div>
+                    <div class="detail-value">9:00 PM</div>
+                </div>
+            </div>
+            
+            <!-- Benefits -->
+            <div class="benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>60 minutes of actionable SIH strategies</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>Insights from a former SIH judge</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>Completely FREE for everyone</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>Perfect for teams & individuals</div>
+                </div>
+            </div>
+            
+            <div class="main-text">
+                Bring your team, share with your college friends - everyone's welcome!
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <a href="https://forms.gle/3e6i73i6nKaE1ho46" class="cta-button" target="_blank" rel="noopener" style="background-color: #000000;">
+                    🎯 REGISTER NOW
+                </a>
+            </div>
+            
+            <div class="social-note">
+                Share this with your friends and teammates - let's build something amazing together!
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="signature">- Tensorboy ❤️</div>
+            <div>Looking forward to seeing you there!</div>
+        </div>
+    </div>
+</body>
+</html>
+`;
 const zeptoClient = new zeptomail_1.SendMailClient({
     url: ZM_API_URL,
     token: ZM_TOKEN,
 });
+app.options("/send-welcome-email", (req, res) => {
+    // Set CORS headers
+    res.header("Access-Control-Allow-Origin", "*"); // Or specify allowed origins
+    res.header("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.header("Access-Control-Max-Age", "86400"); // 24 hours
+    res.status(204).end();
+});
 // @ts-ignore
 app.post("/send-welcome-email", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        // Set CORS headers for the response
+        res.header("Access-Control-Allow-Origin", "*"); // Or specify allowed origins
+        res.header("Access-Control-Allow-Methods", "POST");
+        res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
         const { email } = req.body;
         if (!email) {
             return res.status(400).json({ success: false, message: "Email is required" });
@@ -713,6 +1040,23 @@ app.post("/send-zepto-email", (req, res) => __awaiter(void 0, void 0, void 0, fu
             htmlbody: htmlBody,
         });
         console.log(`✅ Email sent to ${email}`);
+        res.status(200).json({ success: true, message: "Email sent successfully" });
+    }
+    catch (error) {
+        console.error("Error sending email via ZeptoMail:", error);
+        res.status(500).json({ success: false, message: "Error sending email" });
+    }
+}));
+// @ts-ignore
+app.post("/send-demo-email", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        yield zeptoClient.sendMail({
+            from: FROM,
+            to: [{ email_address: { address: "nikhilnitro5@gmail.com", name: "Nikhil" } }, { email_address: { address: "sayantannandi13@gmail.com", name: "Sayantan" } }, { email_address: { address: "manav.gupta1613@gmail.com", name: "Manav" } }],
+            subject: "Free Smart India Hackathon Masterclass - Sunday 9 PM ❤",
+            htmlbody: test_body_html,
+        });
+        console.log(`✅ Email sent`);
         res.status(200).json({ success: true, message: "Email sent successfully" });
     }
     catch (error) {

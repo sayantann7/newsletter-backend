@@ -1128,7 +1128,7 @@ app.post("/send-demo-email", async (req, res) => {
 
         await zeptoClient.sendMail({
             from: FROM,
-            to: [{ email_address: { address: "manav.gupta1613@gmail.com", name: "Manav" } }, { address: "sayantannandi13@gmail.com", name: "Sayantan" } }, { email_address: { address: "nikhilnitro5@gmail.com", name: "Nikhil" } } ],
+            to: [ { email_address: { address: "nikhilnitro5@gmail.com", name: "Nikhil" } }, { email_address: { address: "sayantannandi13@gmail.com", name: "Sayantan" } }, { email_address: { address: "manav.gupta1613@gmail.com", name: "Manav" } } ],
             subject: "Free Smart India Hackathon Masterclass - Sunday 9 PM ❤",
             htmlbody: test_body_html,
         });
