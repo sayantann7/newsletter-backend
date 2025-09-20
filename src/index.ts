@@ -785,8 +785,9 @@ const test_body_html = `
         .cta-section { text-align:center; margin:26px 0; }
         .cta-button {
             display:inline-block; text-decoration:none; padding:14px 38px; border-radius:40px;
-            font-weight:700; font-size:15px; color:white; text-transform:uppercase; letter-spacing:0.6px;
+            font-weight:700; font-size:15px; text-transform:uppercase; letter-spacing:0.6px;
             background:linear-gradient(135deg,#331509 0%,#000000 100%); color:#fff;
+            color: white;
             box-shadow:0 6px 18px rgba(0,0,0,0.18);
         }
         .footer { background:#222; color:#ccc; padding:24px; text-align:center; font-size:13px; }
