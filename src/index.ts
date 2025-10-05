@@ -354,6 +354,35 @@ app.post("/check-subscriber", async (req, res) => {
 });
 
 // @ts-ignore
+app.post("/unsubscribe", async (req, res) => {
+    try {
+        const { email } = req.body;
+        if (!email) {
+            return res.status(400).send("Email is required");
+        }
+
+        // Check if subscriber exists
+        const subscriber = await prisma.email.findUnique({
+            where: { email },
+        });
+
+        if (!subscriber) {
+            return res.status(404).json({ success: false, message: "Subscriber not found" });
+        }
+
+        // Remove from Email table
+        await prisma.email.deleteMany({
+            where: { email },
+        });
+
+        res.status(200).json({ success: true, message: "Unsubscribed successfully" });
+    } catch (error) {
+        console.error("Error unsubscribing:", error);
+        res.status(500).json({ success: false, message: "Error unsubscribing" });
+    }
+});
+
+// @ts-ignore
 app.post("/add-to-waitlist", async (req, res) => {
     try {
         const { email, ig_username, totalVotes, voteGiven, name } = req.body;
