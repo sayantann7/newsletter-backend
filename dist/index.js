@@ -20,6 +20,8 @@ const prisma_1 = require("../src/generated/prisma");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const resend_1 = require("resend");
 const zeptomail_1 = require("zeptomail");
+const path_1 = __importDefault(require("path"));
+const fs_1 = require("fs");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
@@ -319,6 +321,69 @@ app.post("/check-subscriber", (req, res) => __awaiter(void 0, void 0, void 0, fu
     catch (error) {
         console.error("Error checking subscriber:", error);
         res.status(500).json({ error: true, message: "Error checking subscriber" });
+    }
+}));
+// @ts-ignore
+app.post("/unsubscribe", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { email } = req.body;
+        if (!email) {
+            return res.status(400).send("Email is required");
+        }
+        // Check if subscriber exists
+        const subscriber = yield prisma.email.findUnique({
+            where: { email },
+        });
+        if (!subscriber) {
+            return res.status(404).json({ success: false, message: "Subscriber not found" });
+        }
+        // Remove from Email table
+        yield prisma.email.deleteMany({
+            where: { email },
+        });
+        res.status(200).json({ success: true, message: "Unsubscribed successfully" });
+    }
+    catch (error) {
+        console.error("Error unsubscribing:", error);
+        res.status(500).json({ success: false, message: "Error unsubscribing" });
+    }
+}));
+// @ts-ignore
+app.post("/import-email-list", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const filePath = path_1.default.join(__dirname, "..", "email-list.csv");
+        const fileContents = yield fs_1.promises.readFile(filePath, "utf-8");
+        const seenEmails = new Set();
+        const emailsToInsert = [];
+        fileContents
+            .split(/\r?\n/)
+            .map((line) => line.trim())
+            .filter((line) => line.length > 0)
+            .forEach((line) => {
+            const normalized = line.toLowerCase();
+            if (!seenEmails.has(normalized)) {
+                seenEmails.add(normalized);
+                emailsToInsert.push(normalized);
+            }
+        });
+        console.log(`Total unique emails to insert: ${emailsToInsert.length}`);
+        if (emailsToInsert.length === 0) {
+            return res.status(400).json({ success: false, message: "No emails found to import" });
+        }
+        const result = yield prisma.email.createMany({
+            data: emailsToInsert.map((email) => ({ email })),
+            skipDuplicates: true,
+        });
+        res.status(200).json({
+            success: true,
+            processed: emailsToInsert.length,
+            inserted: result.count,
+            skipped: emailsToInsert.length - result.count,
+        });
+    }
+    catch (error) {
+        console.error("Error importing email list:", error);
+        res.status(500).json({ success: false, message: "Error importing email list" });
     }
 }));
 // @ts-ignore
@@ -802,7 +867,7 @@ const test_body_html = `
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #331509 0%, #000000 100%);
+            background-color: #000000;
             color: white;
             text-decoration: none;
             padding: 16px 40px;
@@ -925,7 +990,7 @@ const test_body_html = `
                 <div class="detail-item">
                     <div class="detail-icon">📅</div>
                     <div class="detail-label">Date</div>
-                    <div class="detail-value">Sunday, 21st</div>
+                    <div class="detail-value">Sunday, 21st September</div>
                 </div>
                 <div class="detail-item">
                     <div class="detail-icon">🕘</div>
@@ -960,7 +1025,7 @@ const test_body_html = `
             
             <!-- Call to Action -->
             <div class="cta-section">
-                <a href="https://forms.gle/3e6i73i6nKaE1ho46" class="cta-button" target="_blank" rel="noopener" style="background-color: #000000;">
+                <a href="https://forms.gle/3e6i73i6nKaE1ho46" class="cta-button" target="_blank" rel="noopener" style="background-color: #000000; color: white">
                     🎯 REGISTER NOW
                 </a>
             </div>

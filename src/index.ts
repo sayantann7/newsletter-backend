@@ -6,6 +6,8 @@ import { PrismaClient } from "../src/generated/prisma";
 import bcrpyt from "bcrypt";
 import { Resend } from "resend";
 import { SendMailClient } from "zeptomail";
+import path from "path";
+import { promises as fs } from "fs";
 
 declare global {
     // eslint-disable-next-line no-var
@@ -379,6 +381,50 @@ app.post("/unsubscribe", async (req, res) => {
     } catch (error) {
         console.error("Error unsubscribing:", error);
         res.status(500).json({ success: false, message: "Error unsubscribing" });
+    }
+});
+
+// @ts-ignore
+app.post("/import-email-list", async (req, res) => {
+    try {
+        const filePath = path.join(__dirname, "..", "email-list.csv");
+        const fileContents = await fs.readFile(filePath, "utf-8");
+
+        const seenEmails = new Set<string>();
+        const emailsToInsert: string[] = [];
+
+        fileContents
+            .split(/\r?\n/)
+            .map((line) => line.trim())
+            .filter((line) => line.length > 0)
+            .forEach((line) => {
+                const normalized = line.toLowerCase();
+                if (!seenEmails.has(normalized)) {
+                    seenEmails.add(normalized);
+                    emailsToInsert.push(normalized);
+                }
+            });
+
+        console.log(`Total unique emails to insert: ${emailsToInsert.length}`);
+
+        if (emailsToInsert.length === 0) {
+            return res.status(400).json({ success: false, message: "No emails found to import" });
+        }
+
+        const result = await prisma.email.createMany({
+            data: emailsToInsert.map((email) => ({ email })),
+            skipDuplicates: true,
+        });
+
+        res.status(200).json({
+            success: true,
+            processed: emailsToInsert.length,
+            inserted: result.count,
+            skipped: emailsToInsert.length - result.count,
+        });
+    } catch (error) {
+        console.error("Error importing email list:", error);
+        res.status(500).json({ success: false, message: "Error importing email list" });
     }
 });
 
